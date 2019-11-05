@@ -2,7 +2,7 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Tag: 杂谈 - ZIMZALABIM</title>
+<title>Etiqueta: 杂谈 - ZIMZALABIM</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -138,7 +138,7 @@
     <div class="card-content">
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-            <li><a href="/tags">Tags</a></li>
+            <li><a href="/tags">Etiquetas</a></li>
             <li class="is-active"><a href="#" aria-current="page">杂谈</a></li>
         </ul>
         </nav>
@@ -161,7 +161,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    31 minutes read (About 4616 words)
+                    31 minutes read (About 4628 words)
                 </span>
                 
                 
@@ -174,128 +174,19 @@
             
         </h1>
         <div class="content">
-            <h3 id="1-数据仓库、数据湖、数据流的区别是什么"><a href="#1-数据仓库、数据湖、数据流的区别是什么" class="headerlink" title="1. 数据仓库、数据湖、数据流的区别是什么"></a>1. 数据仓库、数据湖、数据流的区别是什么</h3><p><strong>OLAP</strong> （online analytical processing，在线分析处理）</p>
-<p>数据仓库-〉数据湖-〉数据流 </p>
-<p>数据仓库是存储经过全面处理的结构化数据的 </p>
-<p>数据湖是存储结构化和非结构化的原始数据 </p>
-<p>数据流是比较新的概念 当前大部分处理都将数据作为流来处理 ，分为有限数据流和无限数据流，无限是有始无终的，有限是固定大小有始有终的。</p>
-<h4 id="1-那数仓如何分层"><a href="#1-那数仓如何分层" class="headerlink" title="1. 那数仓如何分层"></a>1. 那数仓如何分层</h4><p>源数据装载入数仓，进入数据缓冲区，经过抽取、清洗、转换刷新，进入基础数据层进行管理，然后在公共层汇总，进入OLAP服务器即数据集市，由前端工具和应用访问、分析和进行数据挖掘。</p>
-<p>原始数据层：从不同系统录入原始的结构化数据和非结构化数据</p>
-<p>数据集成产品（ 数据采集层）：对结构化数据进行数据抽取、清洗和转换，对非结构化数据进行内容分析</p>
-<p>数据存储层：企业级数据平台，服务不同的部门如财务效手生产人力等</p>
-<p>数据分析产品（数据展现层）：数据查询分析平台（固定报表、统计图表、多维分析、office应用、地图分析、电子报告等）</p>
-<p>应用展现门户（信息交付展）：数据仓库内容访问平台（展示图表、报表、灵活分析、个性化设置、日志统计）</p>
-<h4 id="2-DM和DW的区别是什么"><a href="#2-DM和DW的区别是什么" class="headerlink" title="2.DM和DW的区别是什么"></a>2.DM和DW的区别是什么</h4><p>数据集市和数据仓库</p>
-<p>数据集市以某个业务应用为出发点而建设的局部数仓，只关心自己需要的数据而不全盘考虑企业整体的数据架构和应用，每个应用有自己的数据集市。</p>
-<p>结构清晰、针对性强、扩展性好，因为仅对某一特定领域建立，容易维护修改。但建设任务繁重且更加消耗储存空间。</p>
-<p>数仓是决策用的数据集合，效率高质量好扩展性好且面向主题。其中的数据只允许增加不允许删改，主要提供查询服务。</p>
-<h4 id="3-数仓跟中台区别是什么-怎么演变过来的"><a href="#3-数仓跟中台区别是什么-怎么演变过来的" class="headerlink" title="3.数仓跟中台区别是什么 怎么演变过来的"></a>3.数仓跟中台区别是什么 怎么演变过来的</h4><table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center">数据中台</th>
-<th align="center">数据仓库</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">部署架构</td>
-<td align="center">水平扩展</td>
-<td align="center">大部分水平扩展</td>
-</tr>
-<tr>
-<td align="center">数据类型</td>
-<td align="center">文件存储，没有数据类型</td>
-<td align="center">丰富的数据类型</td>
-</tr>
-<tr>
-<td align="center">数据模型</td>
-<td align="center">非常简陋的数据模型</td>
-<td align="center">完善丰富的数据模型</td>
-</tr>
-<tr>
-<td align="center">数据关系</td>
-<td align="center">没有数据关系描述</td>
-<td align="center">数据关系完善</td>
-</tr>
-<tr>
-<td align="center">数据一致</td>
-<td align="center">无一致性</td>
-<td align="center">强一致性</td>
-</tr>
-<tr>
-<td align="center">数据安全</td>
-<td align="center">安全性很弱</td>
-<td align="center">安全性很高</td>
-</tr>
-<tr>
-<td align="center">计算类型</td>
-<td align="center">离线批量处理，只读，低并发</td>
-<td align="center">离线批量处理，只读，低并发</td>
-</tr>
-<tr>
-<td align="center">使用场景</td>
-<td align="center">低密度数据海量存储，数据预处理计算</td>
-<td align="center">高价值数据统一存储和计算平台</td>
-</tr>
-<tr>
-<td align="center">人员要求和成本</td>
-<td align="center">高</td>
-<td align="center">适中</td>
-</tr>
-</tbody></table>
-<p>传统的数据仓库不再能够满足数据分析的需求（从统计分析走向预测分析，从单领域走向多领域，从被动走向主动，从非实时走向实时分析，从结构化数据向多元化数据转变），且对统一平台有强烈诉求，也对数据中台的运算能力、核心算法、数据的全面性提出了更高的要求。</p>
-<p>数据中台的处理架构出现了变化。一是hadoop和spark等等分布式技术和组件为核心的数据处理架构能够支持批量和实时数据及灵活的业务需求，二是数据的与处理流程正在从ETL转向ELT。ETL是先从数据源抽取所需数据，然后数据清洗然后加载到数仓。ELT是根据上层应用的需求，随时从数据中台抽取想要的原始数据进行建模分析。</p>
-<h4 id="4-怎么给数仓做ETL"><a href="#4-怎么给数仓做ETL" class="headerlink" title="4.怎么给数仓做ETL"></a>4.怎么给数仓做ETL</h4><p>ETL是extract、translation和load三个单词的首字母，即抽取（从操作型数据源获取数据）、转换（转换数据，使之转变成为适用于查询和分析的形式和结构）、装载（将转换后的数据导入最终的目标数据仓库）</p>
-<p>工具：数据抽取（kafka；flume；sync）；数据清洗（hive/tez；pig/tez；storm；spark）；数据存储（hadoop；hbase；redis）；任务管理（azkaban；oozie）；数据同步（datax；sqoop）。</p>
-<p><strong>抽取</strong>：把ODS源数据抽取到DW中，然后处理成展示给相关人员查看的数据</p>
-<p>如果没有特殊要求可以一天一次，但是需要避开拉去日志的高峰期；对于有实时性要求的日志，可以一小时一次，或者直接使用kafka等相关工具收集，需要考虑到系统能否承受</p>
-<p>由于数据量较大，一般都是采用增量抽取，但是对于一些特殊场景的数据，比如订单数据，由于订单的状态会发生变化，并且订单的量级是可预知和相对较少的，就需要采用全量拉取的策略；对于源数据的保留，考虑到突发情况，服务器上的源数据至少要保证2天以上的时间</p>
-<p><strong>转换（清洗）</strong>：把不需要的和不符合规范的数据进行处理。数据清洗最好不要放在抽取的环节进行，考虑到有时可能会查原始数据</p>
-<p>a. 空值处理：根据业务需要，可以将空值替换为特定的值或者直接过滤掉；</p>
-<p>b. 验证数据正确性：主要是把不符合业务含义的数据做一处理，比如，把一个表示数量的字段中的字符串替换为0，把一个日期字段的非日期字符串过滤掉等等；</p>
-<p>c. 规范数据格式：比如，把所有的日期都格式化成yyyy-MM-dd HH:mm:ss的格式等；</p>
-<p>d. 数据转码：把一个源数据中用编码表示的字段，通过关联编码表，转换成代表其真实意义的值等等；</p>
-<p>e. 数据标准，统一：比如在源数据中表示男女的方式有很多种，在抽取的时候，直接根据模型中定义的值做转化，统一表示男女；</p>
-<p><strong>装载</strong>：数据拉取，清洗完之后，就需要展示了。一般是把清洗好的数据加载到mysql中，然后在各系统中使用，或者使用Tableau直接给相关人员展示</p>
-<h3 id="2-数据中台和业务中台的区别是什么，中台如何分层"><a href="#2-数据中台和业务中台的区别是什么，中台如何分层" class="headerlink" title="2. 数据中台和业务中台的区别是什么，中台如何分层"></a>2. 数据中台和业务中台的区别是什么，中台如何分层</h3><p><strong>数据中台</strong>成为热点，“中台”这个概念，是相对于前台和后台而生，是前台和后台的链接点，将业务共同的工具和技术予以沉淀。数据中台是指<strong>数据采集交换、共享融合、组织处理、建模分析、管理治理和服务应用于一体</strong>的<strong>综合性数据能力平台</strong>，在大数据生态中处于承上启下的功能，提供面向数据应用支撑的底座能力。广义上来给数据中台一个企业级的定义：“<strong>聚合和治理跨域数据，将数据抽象封装成服务，提供给前台以业务价值的逻辑概念</strong>”。</p>
-<p><strong>业务中台</strong>（企业核心金正能力的固化与赋能）：能力固化与赋能，固化通用能力，赋能前线部队，提升配置效率，加快前线响应，产品化业务化，开辟全新生态。</p>
-<p><strong>数据中台</strong>（企业核心数据资产的整合与共享）：资产整合与共享，整合多维数据，统一资产管理，连通数据孤岛，共享数据资源，深入挖掘数据，盘活资产价值。</p>
-<p>业务中台实现各个业务模块功能的复用 数据中台对各个业务的数据进行集中的采集计算等操作 业务中台的分层不太清楚 数据中台的分层大致有采集、计算、统一对外接口和对外应用。</p>
-<p>操作数据层，明细数据层，汇总数据层，应用数据层</p>
-<h4 id="1-业务和服务的区别是什么"><a href="#1-业务和服务的区别是什么" class="headerlink" title="1. 业务和服务的区别是什么"></a>1. 业务和服务的区别是什么</h4><p>业务更加中性</p>
-<h4 id="2-什么是微服务"><a href="#2-什么是微服务" class="headerlink" title="2. 什么是微服务"></a>2. 什么是微服务</h4><h4 id="3-有的公司会做“技术中台”-这又是什么"><a href="#3-有的公司会做“技术中台”-这又是什么" class="headerlink" title="3. 有的公司会做“技术中台” 这又是什么"></a>3. 有的公司会做“技术中台” 这又是什么</h4><p>​    将技术能力与业务能力分离，以产品化的方式向前台提供技术赋能</p>
-<h4 id="4-中台上云的话-是IaaS（基础设施即服务）、PaaS（平台即服务）、DaaS-数据即服务-、还是SaaS（软件即服务）呢"><a href="#4-中台上云的话-是IaaS（基础设施即服务）、PaaS（平台即服务）、DaaS-数据即服务-、还是SaaS（软件即服务）呢" class="headerlink" title="4. 中台上云的话 是IaaS（基础设施即服务）、PaaS（平台即服务）、DaaS(数据即服务)、还是SaaS（软件即服务）呢"></a>4. 中台上云的话 是IaaS（基础设施即服务）、PaaS（平台即服务）、DaaS(数据即服务)、还是SaaS（软件即服务）呢</h4><p>IaaS只提供基础设施，PaaS相当于基础设施加操作系统，SaaS提供软件用户只需要操作数据，DaaS用户可以只做读写。</p>
-<h3 id="3-Kafka里Stateful-Stream-Processing怎么理解"><a href="#3-Kafka里Stateful-Stream-Processing怎么理解" class="headerlink" title="3. Kafka里Stateful Stream Processing怎么理解"></a>3. Kafka里Stateful Stream Processing怎么理解</h3><p>无界数据流的处理</p>
-<h3 id="4-如何用Flink设计一个实时训练系统"><a href="#4-如何用Flink设计一个实时训练系统" class="headerlink" title="4. 如何用Flink设计一个实时训练系统"></a>4. 如何用Flink设计一个实时训练系统</h3><h3 id="5-时序模型在深度学习领域有哪些模型-原理和应用场景是什么"><a href="#5-时序模型在深度学习领域有哪些模型-原理和应用场景是什么" class="headerlink" title="5. 时序模型在深度学习领域有哪些模型 原理和应用场景是什么"></a>5. 时序模型在深度学习领域有哪些模型 原理和应用场景是什么</h3><p>应用场景有时空分析 资源环境监测 地球空间认知  </p>
-<p>模型框架是依据单/多传感器节点和单/多维进行划分的</p>
-<p>问题类型主要有：1. 通过其他时间序列和维度作为驱动来预测目标序列；2. 通过多元历史序列来预测未来t时间内的目标序列，将其他时间序列及维度作为目标的数据特征，同时预测多个目标序列；3. 通过多元历史序列及序列间的依赖关系来训练函数，预测目标序列</p>
-<p>分析方法主要有：1.  <strong>仅根据历史时间序列的趋势发展预测未来时间序列的趋势发展</strong>，通过建立适当的数学模型拟合时间趋势曲线，根据建模预测未来时间序列的趋势曲线。常见模型包括<strong>平均自动回归模型</strong>。但是他们通常都不能对多个节点序列之间的关系进行建模，所以<strong>仅适合单节点单维度</strong>的。2. 为了提高预测的精度，<strong>非线性自动回归外生模型</strong>（NARX）或者<strong>机器学习算法</strong>被引入时序预测，此类方法根据具体的应用场景选取可能影响预测值的特征，引入模型，应用机器学习的回归模型进行预测。需要多个维度的数据建立模型较为复杂，预测精度高但<strong>仅针对特定的用用场景</strong>。且由于建模方式是预先定义的非线性形式，可能无法捕捉真正潜在的非线性关系。3. <strong>序列生成模型</strong>主要是针对序列上下文关系进行学习，<strong>不能直接对空间关系建模</strong>，对于隐式空间关系也可以通过维度拼接、解点表示学习的办法进行建模。所以序列生成模型主要用来做<strong>单元或多元时间序列预测分析</strong>，而且主要还是以<strong>多维时间序列预测分析</strong>为主。4. 基于传统机器学习的方法是先抽取时间统计特征和空间结构特征再输入模型中，基于序列生成模型的方法主要学习序列上下文关系，而对空间关系建模能力弱（不是没有，可以维度拼接），所以有必要提出同时学习时间和空间关系的预测模型。忽略各个节点之间的网络关系结构的动态性，主要考虑静态的关系结构即图结构，所以大部分的时空序列模型都是基于时间图快照的时序图模型，即每个时刻所有节点的关系都是固定的静态图，或者干脆只考虑其间接隐含的、科学系的关系。这需要通过模型直接学习空间关系而不是手动抽取结构特征，通常需要结合空间卷积或图结构的学习方法，比如卷积网络和图神经网络等。</p>
-<h3 id="6-海量实时物联网数据应该如何存储和管理-例如存在时空数据库中？时序数据库中？事件流？"><a href="#6-海量实时物联网数据应该如何存储和管理-例如存在时空数据库中？时序数据库中？事件流？" class="headerlink" title="6. 海量实时物联网数据应该如何存储和管理 例如存在时空数据库中？时序数据库中？事件流？"></a>6. 海量实时物联网数据应该如何存储和管理 例如存在时空数据库中？时序数据库中？事件流？</h3><h3 id="7-TOCC实时交通指挥平台怎么搭建-例如交通流模型怎么做-需要哪些数据和模型-系统架构如何设计"><a href="#7-TOCC实时交通指挥平台怎么搭建-例如交通流模型怎么做-需要哪些数据和模型-系统架构如何设计" class="headerlink" title="7. TOCC实时交通指挥平台怎么搭建 例如交通流模型怎么做 需要哪些数据和模型 系统架构如何设计"></a>7. TOCC实时交通指挥平台怎么搭建 例如交通流模型怎么做 需要哪些数据和模型 系统架构如何设计</h3><p>TOCC是交通综合运行协调与应急指挥系统 </p>
-<p>服务政府决策、服务行业监管、服务企业运营、服务公众出行（服务用户为政府部门、行业管理、企业单位和社会公众）</p>
-<p>四大应用系统：<strong>运行监测预警</strong>、<strong>应急协同指挥</strong>、<strong>辅助决策支持</strong>、<strong>公众出行服务</strong></p>
-<p>三大支撑系统：<strong>交通地理信息服务</strong>（基础地图服务、标志地标查找、地物添加）、<strong>统一身份认证平台</strong>（用户管理、身份认证、权限管理、单点登录）、<strong>统一视频监控服务</strong>（视频集成、视频功能整合、手机视频）</p>
-<p>一个中心：<strong>综合交通大数据中心</strong> 包括（云、交通流理论、交通网络模型、交通需求模型、多模式仿真引擎、时空分析引擎）涉及 数据采集-体量；数据解析-价值；数据清洗-速度；数据分析-多样性；数据应用-真实性。</p>
-<p>终端通过通信网络将数据传入</p>
-<p><img src="C:%5CUsers%5Ccaras%5CDesktop%5C%E5%9F%8E%E5%B8%82%E4%BA%A4%E9%80%9A.jpg" alt="城市交通"></p>
-<h3 id="8-深度学习的概念-可以突击一下-CNN-RNN-反向传播-常用的激活函数-NLP-计算机视觉-GAN-迁移学习-强化学习-联邦学习"><a href="#8-深度学习的概念-可以突击一下-CNN-RNN-反向传播-常用的激活函数-NLP-计算机视觉-GAN-迁移学习-强化学习-联邦学习" class="headerlink" title="8. 深度学习的概念  可以突击一下  CNN RNN 反向传播 常用的激活函数 NLP 计算机视觉 GAN 迁移学习  强化学习 联邦学习"></a>8. 深度学习的概念  可以突击一下  CNN RNN 反向传播 常用的激活函数 NLP 计算机视觉 GAN 迁移学习  强化学习 联邦学习</h3><h4 id="CNN-：卷积神经网络"><a href="#CNN-：卷积神经网络" class="headerlink" title="CNN ：卷积神经网络"></a>CNN ：卷积神经网络</h4><p>​    用传统的三层神经网络需要大量的参数，原因在于每个神经元都和相邻层的神经元相连接，但是思考一下，这种连接方式是必须的吗？可以用某种方式对一张图片的某个典型特征识别</p>
-<p>​    同一层的神经元可以共享卷积核，那么对于高位数据的处理将会变得非常简单。并且使用卷积核后图片的尺寸变小，方便后续计算，并且我们不需要手动去选取特征，只用设计好卷积核的尺寸，数量和滑动的步长就可以让它自己去训练了</p>
-<h4 id="RNN：循环神经网络"><a href="#RNN：循环神经网络" class="headerlink" title="RNN：循环神经网络"></a>RNN：循环神经网络</h4><p>​    BP算法和CNN算法仅考虑一个输入的影响而不考虑其他时刻输入的影响，对于与时间先后有关的预测就不能准确预测。</p>
-<p>​    RNN是一种特殊的神经网络结构，与DNN和CNN不同的是它不仅考虑前一时刻的输入，也赋予网络对前序内容的记忆。具体的表现形式为网络会对前面的信息进行记忆并应用于当前输出的计算中，即隐藏层之间的节点不再无连接而是有连接的，并且隐藏层的输入不仅包括输入层的输出还包括上一时刻隐藏层的输出。</p>
-<p>​    RNN的应用：自然语言处理，机器翻译，语音事别，图像描述生成，推荐</p>
-<h4 id="反向传播（BackPropagation）："><a href="#反向传播（BackPropagation）：" class="headerlink" title="反向传播（BackPropagation）："></a>反向传播（BackPropagation）：</h4><p>​    损失函数，使用平均绝对误差等数学工具表达出的输出结果和真实结果的偏差</p>
-<p>梯度下降</p>
-<h4 id="常用的激活函数"><a href="#常用的激活函数" class="headerlink" title="常用的激活函数"></a>常用的激活函数</h4><p>在多层神经网络中，上层节点的输出和下层节点的输入之间具有一个函数关系，这个函数称为激活函数 ，引入非线性函数作为激励函数，这样深层神经网络的表达能力就更加强大</p>
-<p>sigmod  tanh ReLU  ELU PReLU</p>
-<h4 id="NLP"><a href="#NLP" class="headerlink" title="NLP"></a>NLP</h4><p>​    神经语言程序学</p>
-<h4 id="计算机视觉"><a href="#计算机视觉" class="headerlink" title="计算机视觉"></a>计算机视觉</h4><p>​    从图像或者多维数据中获取信息</p>
-<h4 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h4><p>​    生成式对抗网络 一种复杂分布上无监督学习的深度学习模型，生成和判别互相博弈学习</p>
-<h4 id="迁移学习"><a href="#迁移学习" class="headerlink" title="迁移学习"></a>迁移学习</h4><p>把任务A开发的模型作为初始点，重新使用在任务B的开发模型的过程中</p>
-<h4 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h4><p>不要求预先给定任何数据，而是通过接收环境对动作的奖励（反馈）获得学习信息并更新模型参数</p>
-<h4 id="联邦学习"><a href="#联邦学习" class="headerlink" title="联邦学习"></a>联邦学习</h4><p>一个机器学习框架，能有效帮助多个机构进行数据使用和机器学习建模</p>
-<h3 id="9-大数据那块-谷歌的三驾马车"><a href="#9-大数据那块-谷歌的三驾马车" class="headerlink" title="9. 大数据那块 谷歌的三驾马车"></a>9. 大数据那块 谷歌的三驾马车</h3><p>google的三驾马车：GFS（可扩展的大型数据密集型应用的分布式文件系统）、MapReduce（超大集群的简单数据处理）、Bigtable（结构化数据的分布式存储系统）</p>
-
+            <blockquote>
+<p>简单的数据科学相关概念</p>
+</blockquote>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/10/30/大数据/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -324,7 +215,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes read (About 848 words)
+                    6 minutes read (About 843 words)
                 </span>
                 
                 
@@ -337,56 +228,19 @@
             
         </h1>
         <div class="content">
-            <p>[TOC]</p>
-<blockquote>
-<p>首先说明完全零基础是不可能的？！</p>
-<p>不过有兴趣尝试软件开发类岗位的一定也是有相关基础的……</p>
-<p>本文献给跟我一样虽然屁都不会但是谜一样的自信地投了软开岗位的旁友们</p>
+            <blockquote>
+<p>首先说明完全零基础是不可能的？！<br>不过有兴趣尝试软件开发类岗位的一定也是有相关基础的……<br>本文献给跟我一样虽然屁都不会但是谜一样的自信地投了软开岗位的旁友们</p>
 </blockquote>
-<h3 id="笔试题和面试题准备"><a href="#笔试题和面试题准备" class="headerlink" title="笔试题和面试题准备"></a>笔试题和面试题准备</h3><h4 id="茴字有几种写法（排序啦是排序"><a href="#茴字有几种写法（排序啦是排序" class="headerlink" title="茴字有几种写法（排序啦是排序"></a>茴字有几种写法（排序啦是排序</h4><p><strong>冒泡</strong>应该是讲的最多的？底下有个大概示意</p>
-<blockquote>
-<p>int i , j;</p>
-<p>for (i = 0; i &lt; len; i++){</p>
-<p>​    for (j = 0; j &lt; len - i -1; j++){</p>
-<p>​        if (arr[j+1] &lt; arr[j]){</p>
-<p>​            swap(arr[j], arr[j+1]);</p>
-<p>​        }</p>
-<p>​    }</p>
-<p>}</p>
-</blockquote>
-<p>理解了冒泡那么插入和选择也都很好理解和记忆</p>
-<p>稍微进阶一点的记住<strong>快排</strong>的原理和实现</p>
-<blockquote>
-<p>太长不想写了</p>
-</blockquote>
-<p><strong>堆排</strong>也很重要但是我没记住（ntm</p>
-<p>当然常见的排序最好都要回算时间和空间复杂度</p>
-<p>这里提供一个非常简陋的计算方法</p>
-<blockquote>
-<p>时间复杂度： 一层for循环就是n的一次方，两层嵌套就是n²，只算最高次的。用了二分法的就跟log有关系。</p>
-<p>空间复杂度：用了额外空间就不是O(1)了，具体多少就看开了多少内存。</p>
-</blockquote>
-<h4 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h4><p><strong>数组和链表的区别</strong></p>
-<p><strong>栈、堆和队列</strong></p>
-<p>两个栈做一个队列</p>
-<p>两个队列做一个栈</p>
-<p><strong>哈希表的原理</strong></p>
-<p>这玩意我觉得非常之坑，用起来稀里糊涂的，但是消除时间复杂度又很好用显得你很专业</p>
-<h4 id="编程基础"><a href="#编程基础" class="headerlink" title="编程基础"></a>编程基础</h4><p>多态、虚函数、等等</p>
-<h4 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h4><p>进程和线程 进程之间通信</p>
-<h4 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h4><p>OSI模型 三次握手四次挥手 </p>
-<h4 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h4><p>进阶的 我不会 你们多康康</p>
-<h4 id="tbc"><a href="#tbc" class="headerlink" title="tbc"></a>tbc</h4><h3 id="签约和三方协议"><a href="#签约和三方协议" class="headerlink" title="签约和三方协议"></a>签约和三方协议</h3><h4 id="三方协议是什么"><a href="#三方协议是什么" class="headerlink" title="三方协议是什么"></a>三方协议是什么</h4><p>三方协议不是劳动协议，签了不去或者对面不想要你，各自赔钱就行。</p>
-<p>三方协议相比两方对学生的约束更大，对于企业……</p>
-<p>反正对于大企业还是小毛毛雨（。2019届的企业方大规模毁约的事件应该还挺容易搜索到的</p>
-<h4 id="三方协议保证学生权益吗？"><a href="#三方协议保证学生权益吗？" class="headerlink" title="三方协议保证学生权益吗？"></a>三方协议保证学生权益吗？</h4><p>虽然最初的目的是为了保护学生，但是目前来看还是偏向企业……</p>
-<h3 id="毁约和毁约流程"><a href="#毁约和毁约流程" class="headerlink" title="毁约和毁约流程"></a>毁约和毁约流程</h3><h4 id="首先你需要一个耐心等待的下家"><a href="#首先你需要一个耐心等待的下家" class="headerlink" title="首先你需要一个耐心等待的下家"></a>首先你需要一个耐心等待的下家</h4><h4 id="然后你需要递交毁约申请连同毁约金一起递给上家"><a href="#然后你需要递交毁约申请连同毁约金一起递给上家" class="headerlink" title="然后你需要递交毁约申请连同毁约金一起递给上家"></a>然后你需要递交毁约申请连同毁约金一起递给上家</h4><p>这一步会比较恶心……首先是你的上家可能会卡时间，其次是你的学校为了就业率可能卡你</p>
-<p>找学校就业办的老师或是学院负责相关事务的辅导员<strong>签字和盖章</strong></p>
-<p>所以有一个好说话的辅导员或是平时就和辅导员搞好关系很重要</p>
-<p>（<em>另外由于学校就业率以及和企业的良好关系的角度出发，你最好有下家并且下家和上家没有明显竞争关系</em></p>
-<h4 id="接着你需要拿到你上家开出的毁约证明或者旧的三方"><a href="#接着你需要拿到你上家开出的毁约证明或者旧的三方" class="headerlink" title="接着你需要拿到你上家开出的毁约证明或者旧的三方"></a>接着你需要拿到你上家开出的毁约证明或者旧的三方</h4><h4 id="好啦，现在你可以到学校申请新三方啦"><a href="#好啦，现在你可以到学校申请新三方啦" class="headerlink" title="好啦，现在你可以到学校申请新三方啦"></a>好啦，现在你可以到学校申请新三方啦</h4><h3 id="南京到东莞的旅游路线（bushi"><a href="#南京到东莞的旅游路线（bushi" class="headerlink" title="南京到东莞的旅游路线（bushi"></a>南京到东莞的旅游路线（bushi</h3><h3 id="对XXX有什么基础认知"><a href="#对XXX有什么基础认知" class="headerlink" title="对XXX有什么基础认知"></a>对XXX有什么基础认知</h3>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/07/23/三天突击零基础面试宝典/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -441,7 +295,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Posts
+                        Entradas
                     </p>
                     <p class="title has-text-weight-normal">
                         7
@@ -451,7 +305,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categories
+                        Categorias
                     </p>
                     <p class="title has-text-weight-normal">
                         2
@@ -461,7 +315,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tags
+                        Etiquetas
                     </p>
                     <p class="title has-text-weight-normal">
                         2
@@ -471,7 +325,7 @@
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/carabbeam" target="_blank">
-                Follow</a>
+                SEGUIR</a>
         </div>
         
         
@@ -591,7 +445,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categories
+                Categorias
             </h3>
             <ul class="menu-list">
             <li>
@@ -620,7 +474,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Tag Cloud
+            Nube de etiquetas
         </h3>
         <a href="/tags/日记/" style="font-size: 20px;">日记</a> <a href="/tags/杂谈/" style="font-size: 10px;">杂谈</a>
     </div>
@@ -634,7 +488,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
         
         <article class="media">
@@ -740,7 +594,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
         
@@ -797,7 +651,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -835,7 +689,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
         
         <article class="media">
@@ -941,7 +795,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
         
@@ -998,7 +852,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -1191,10 +1045,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Posts',
+                POSTS: 'Entradas',
                 PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
+                CATEGORIES: 'Categorias',
+                TAGS: 'Etiquetas',
                 UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',
