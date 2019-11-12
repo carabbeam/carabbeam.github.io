@@ -2,19 +2,24 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Tag: 笔记 - ZIMZALABIM</title>
+<title>linux常用指令集合 - ZIMZALABIM</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="ZIMZALABIM">
-<meta property="og:url" content="http://carabbeam.rip/tags/笔记/index.html">
+    <meta name="description" content="简陋，并且随时增加">
+<meta name="keywords" content="笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux常用指令集合">
+<meta property="og:url" content="http://carabbeam.rip/2019/11/11/linux常用指令集合/index.html">
 <meta property="og:site_name" content="ZIMZALABIM">
+<meta property="og:description" content="简陋，并且随时增加">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://carabbeam.rip/images/og_image.png">
+<meta property="og:updated_time" content="2019-11-12T15:49:44.690Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZIMZALABIM">
+<meta name="twitter:title" content="linux常用指令集合">
+<meta name="twitter:description" content="简陋，并且随时增加">
 <meta name="twitter:image" content="http://carabbeam.rip/images/og_image.png">
 
 
@@ -89,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/favicon.png" alt="ZIMZALABIM" height="28">
+                <img src="/images/favicon.png" alt="linux常用指令集合" height="28">
             
             </a>
         </div>
@@ -121,6 +126,10 @@
                     
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -135,17 +144,6 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">Tags</a></li>
-            <li class="is-active"><a href="#" aria-current="page">笔记</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    <div class="card">
     
     <div class="card-content article ">
         
@@ -170,79 +168,50 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/11/11/linux常用指令集合/">linux常用指令集合</a>
+                linux常用指令集合
             
         </h1>
         <div class="content">
             <blockquote>
 <p>简陋，并且随时增加</p>
 </blockquote>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/11/linux常用指令集合/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
+<a id="more"></a>
 
 
 
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-10T12:51:40.000Z">2019-11-10</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/专业/">专业</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4 minutes read (About 532 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/11/10/git新手使用手册/">git新手使用手册</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
+<h3 id="赋予权限"><a href="#赋予权限" class="headerlink" title="赋予权限"></a>赋予权限</h3><blockquote>
+<p>chmod 777 ./* -R</p>
+</blockquote>
+<h3 id="VIM"><a href="#VIM" class="headerlink" title="VIM"></a>VIM</h3><blockquote>
+<p>:w   //save<br>:wq  //save&amp;quit<br>:q!   //强退不保存<br>zz //有修改save&amp;quit；无修改退出<br>:w filename //另存为<br>:r filename   //将filename文件内容读到光标处</p>
+</blockquote>
 <blockquote>
-<p>简易手册，新手友好，不求理解，只求能用。如有错误请帮忙提出。</p>
+<p>gg   //文档第一行</p>
 </blockquote>
+<h3 id="远程传输"><a href="#远程传输" class="headerlink" title="远程传输"></a>远程传输</h3><blockquote>
+<p>scp root@ip地址:/usr1/code/……/target空格./</p>
 </blockquote>
+<h3 id="压缩和解压缩"><a href="#压缩和解压缩" class="headerlink" title="压缩和解压缩"></a>压缩和解压缩</h3><blockquote>
+<p>zip -r filename ./       //压缩到当前文件夹<br>zip -r filename </p>
+</blockquote>
+<h3 id="正则表达式搜索文件内容"><a href="#正则表达式搜索文件内容" class="headerlink" title="正则表达式搜索文件内容"></a>正则表达式搜索文件内容</h3><blockquote>
+<p>grep -rn “xxxx”   //r表示递归，n表示行号</p>
+</blockquote>
+<h3 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h3><blockquote>
+<p>执行.sh文件时看一下，是否可以改成j8或者j24，使用多线程提高编译速度。</p>
+</blockquote>
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/10/git新手使用手册/#more">Read More</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/笔记/">笔记</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -250,189 +219,60 @@
 
 
 
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-11-05T12:40:10.000Z">2019-11-05</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/专业/">专业</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2 minutes read (About 343 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
             
-                <a class="has-link-black-ter" href="/2019/11/05/吴恩达机器学习笔记/">吴恩达机器学习笔记</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<p>写在前面</p>
-<p>非常我流且敷衍 主要是记概念和要点 </p>
-<p>参考了黄海广博士的 <a href="http://github/com/fengdu78/Coursera-ML-AndrewNg-Notes" target="_blank" rel="noopener">笔记</a></p>
-</blockquote>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/11/11/vs2010工程搭建/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">vs2010工程搭建</span>
+            </a>
         </div>
         
         
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/05/吴恩达机器学习笔记/#more">Read More</a>
-                </div>
-            </div>
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/11/10/git新手使用手册/">
+                <span class="level-item">git新手使用手册</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
         </div>
-        
         
     </div>
 </div>
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'jsQbW7L09koJK6ws2GwsupIQ-gzGzoHsz',
+        app_key: '50daikb1zgV80YjFJNKcq1S6',
+        placeholder: 'Say something...'
+    });
+</script>
 
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-30T13:59:10.000Z">2019-10-30</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/专业/">专业</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    31 minutes read (About 4627 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/10/30/大数据/">大数据相关基础概念</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<p>简单的数据科学相关概念</p>
-</blockquote>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/10/30/大数据/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
     </div>
 </div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-10-08T05:57:53.000Z">2019-10-08</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/专业/">专业</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3 minutes read (About 444 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/10/08/搭建博客和遇到的常见问题/">搭建博客和遇到的常见问题</a>
-            
-        </h1>
-        <div class="content">
-            <blockquote>
-<p>我的过程和踩的坑</p>
-</blockquote>
-<h3 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h3><h4 id="5-域名"><a href="#5-域名" class="headerlink" title="5. 域名"></a>5. 域名</h4><p>买！！！！</p>
-<h3 id="我遇到的问题"><a href="#我遇到的问题" class="headerlink" title="我遇到的问题"></a>我遇到的问题</h3><p><strong>因为是现在才想起来记录，之前遇到的问题可能会有遗漏，但应该也能作为参考了</strong></p>
-<h4 id="1-ERROR-Deployer-not-found-git"><a href="#1-ERROR-Deployer-not-found-git" class="headerlink" title="1. ERROR Deployer not found: git"></a>1. ERROR Deployer not found: git</h4><p>在博客对应目录下执行：</p>
-<blockquote>
-<p> npm install –save hexo-deployer-git</p>
-</blockquote>
-<h4 id="2-头像和LOGO"><a href="#2-头像和LOGO" class="headerlink" title="2. 头像和LOGO"></a>2. 头像和LOGO</h4><p>可以使用gravatar，但是把图片放在所用的主题的对应文件夹的source/images里，也挺好的。</p>
-<h4 id="3-新建about页面"><a href="#3-新建about页面" class="headerlink" title="3. 新建about页面"></a>3. 新建about页面</h4><p>在博客对应目录下执行：</p>
-<blockquote>
-<p>hexo new page “about”</p>
-</blockquote>
-<p>在主题的_config.yml中将menu中about选项前的注释删掉。</p>
-<h4 id="4-首页不显示全文"><a href="#4-首页不显示全文" class="headerlink" title="4. 首页不显示全文"></a>4. 首页不显示全文</h4><p>在摘要后手动写这一行</p>
-<blockquote></blockquote>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/10/08/搭建博客和遇到的常见问题/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 </div>
                 
 
@@ -547,6 +387,41 @@
 </div>
     
         
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#赋予权限">
+        <span class="has-mr-6">1</span>
+        <span>赋予权限</span>
+        </a></li><li>
+        <a class="is-flex" href="#VIM">
+        <span class="has-mr-6">2</span>
+        <span>VIM</span>
+        </a></li><li>
+        <a class="is-flex" href="#远程传输">
+        <span class="has-mr-6">3</span>
+        <span>远程传输</span>
+        </a></li><li>
+        <a class="is-flex" href="#压缩和解压缩">
+        <span class="has-mr-6">4</span>
+        <span>压缩和解压缩</span>
+        </a></li><li>
+        <a class="is-flex" href="#正则表达式搜索文件内容">
+        <span class="has-mr-6">5</span>
+        <span>正则表达式搜索文件内容</span>
+        </a></li><li>
+        <a class="is-flex" href="#tips">
+        <span class="has-mr-6">6</span>
+        <span>tips</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
     
         
 
@@ -1103,7 +978,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/favicon.png" alt="ZIMZALABIM" height="28">
+                    <img src="/images/favicon.png" alt="linux常用指令集合" height="28">
                 
                 </a>
                 <p class="is-size-7">
