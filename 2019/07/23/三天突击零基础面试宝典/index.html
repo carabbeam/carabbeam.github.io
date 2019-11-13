@@ -16,7 +16,7 @@
 <meta property="og:description" content="本文献给跟我一样虽然屁都不会但是谜一样的自信地投了软开岗位的旁友们 希望我们都能获得尘世间的幸福">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://carabbeam.rip/images/og_image.png">
-<meta property="og:updated_time" content="2019-11-11T13:18:01.942Z">
+<meta property="og:updated_time" content="2019-11-13T04:14:05.403Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试和签约和解约和离职">
 <meta name="twitter:description" content="本文献给跟我一样虽然屁都不会但是谜一样的自信地投了软开岗位的旁友们 希望我们都能获得尘世间的幸福">
@@ -126,7 +126,7 @@
                     
                 
                 
-                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catálogo" href="javascript:;">
                     <i class="fas fa-list-ul"></i>
                 </a>
                 
@@ -159,7 +159,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    6 minutes read (About 910 words)
+                    14 minutes read (About 2098 words)
                 </span>
                 
                 
@@ -178,7 +178,12 @@
 </blockquote>
 <a id="more"></a>
 
-<h3 id="笔试题和面试题准备"><a href="#笔试题和面试题准备" class="headerlink" title="笔试题和面试题准备"></a>笔试题和面试题准备</h3><h4 id="茴字有几种写法（排序啦是排序"><a href="#茴字有几种写法（排序啦是排序" class="headerlink" title="茴字有几种写法（排序啦是排序"></a>茴字有几种写法（排序啦是排序</h4><p><strong>冒泡</strong>应该是讲的最多的？底下有个大概示意</p>
+<h3 id="笔试题和面试题准备"><a href="#笔试题和面试题准备" class="headerlink" title="笔试题和面试题准备"></a>笔试题和面试题准备</h3><h4 id="茴字有几种写法（排序啦是排序"><a href="#茴字有几种写法（排序啦是排序" class="headerlink" title="茴字有几种写法（排序啦是排序"></a>茴字有几种写法（排序啦是排序</h4><p>参考<a href="https://www.cnblogs.com/fnlingnzb-learner/p/9374732.html" target="_blank" rel="noopener">Boblim的博客</a><br>| 排序方法 | 时间复杂度（平均） | 空间复杂度 | 稳定性 | 原理                                                         |<br>| :——: | :—————-: | :——–: | :—-: | :———————————————————– |<br>|   冒泡   |       O(n²)        |    O(1)    |  稳定  | 在扫描过程中两两比较相邻记录，如果反序则交换，最终，最大记录就被“沉到”了序列的最后一个位置，第二遍扫描将第二大记录“沉到”了倒数第二个位置，重复上述操作，直到n-1 遍扫描后，整个序列就排好序了。 |<br>|   插入   |       O(n²)        |    O(1)    |  稳定  | 对于一个数组A[0,n]的排序问题，假设认为数组在A[0,n-1]排序的问题已经解决了。 考虑A[n]的值，从右向左扫描有序数组A[0,n-1]，直到第一个小于等于A[n]的元素，将A[n]插在这个元素的后面。 |<br>|   归并   |      O(nlogn)      |    O(n)    |  稳定  | 采用经典的<strong>分治</strong>（divide-and-conquer）策略（分治法将问题<strong>分</strong>(divide)成一些小的问题然后递归求解，而<strong>治(conquer)</strong>的阶段则将分的阶段得到的各答案”修补”在一起，即分而治之)。 |<br>|          |                    |            |        |                                                              |<br>|   选择   |       O(n²)        |    O(1)    | 不稳定 | 初始时在序列中找到最小（大）元素，放到序列的起始位置作为已排序序列；然后，再从剩余未排序元素中继续寻找最小（大）元素，放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。 |<br>|   希尔   |      O(nlogn)      |    O(1)    | 不稳定 | 希尔排序也是一种插入排序，它是简单插入排序经过改进之后的一个更高效的版本，也称为缩小增量排序，把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止。 |<br>|   堆排   |      O(nlogn)      |    O(1)    | 不稳定 | 利用堆的性质来进行排序的                                     |<br>|   快排   |      O(nlogn)      |  O(nlogn)  | 不稳定 | 选一个数作为基准，双指针分别从前后两端遍历数组，当后指针比基准小且前指针比基准大时交换，直到相遇。把相遇位置的数与基准数做交换，继续快排二分后的两个数组。 |</p>
+<p><strong>稳定</strong>：如果a原本在b前面，而a=b，排序之后a仍然在b的前面。</p>
+<p><strong>不稳定</strong>：如果a原本在b的前面，而a=b，排序之后 a 可能会出现在 b 的后面。</p>
+<p><strong>时间复杂度</strong>：对排序数据的总的操作次数。反映当n变化时，操作次数呈现什么规律。</p>
+<p><strong>空间复杂度：</strong>是指算法在计算机内执行时所需存储空间的度量，它也是数据规模n的函数。</p>
+<p><strong>冒泡</strong>应该是讲的最多的？底下有个大概示意</p>
 <blockquote>
 <p>int i , j;</p>
 <p>for (i = 0; i &lt; len; i++){</p>
@@ -190,10 +195,39 @@
 <p>稍微进阶一点的记住<strong>快排</strong>的原理和实现</p>
 <blockquote>
 <p>要点是选一个 前后各一个指针和它比大小</p>
+<p>class Solution {</p>
+<p>public:</p>
+<p>  void sort(vector<int>&amp; nums, int start, int end){</int></p>
+<p>​    if (start &gt; end){</p>
+<p>​      return; }</p>
+<p>​    int temp = nums[start];</p>
+<p>​    int i = start;</p>
+<p>​    int j = end;</p>
+<p>​    while (i != j){</p>
+<p>​        while (nums[j] &gt;= temp &amp;&amp; i &lt; j){</p>
+<p>​          j–; }</p>
+<p>​        while (nums[i] &lt;= temp &amp;&amp; i &lt; j){</p>
+<p>​          i++; }</p>
+<p>​        if (i &lt; j){</p>
+<p>​          int p = nums[i];</p>
+<p>​          nums[i] = nums[j];</p>
+<p>​          nums[j] = p; }</p>
+<p>​     }</p>
+<p>​    nums[start] = nums[i];</p>
+<p>​    nums[i] = temp;</p>
+<p>​    sort(nums,start,i-1);</p>
+<p>​    sort(nums,i+1,end);</p>
+<p>  }</p>
+<p>  vector<int> sortArray(vector<int>&amp; nums) {</int></int></p>
+<p>​    int start = 0;</p>
+<p>​    int end = nums.size()-1;</p>
+<p>​    sort(nums,start,end);</p>
+<p>​    return nums;</p>
+<p>  }</p>
+<p>};</p>
 </blockquote>
 <p><strong>堆排</strong>也很重要但是我没记住（ntm</p>
-<p>当然常见的排序最好都要回算时间和空间复杂度</p>
-<p>这里提供一个非常简陋的计算方法</p>
+<p>一个非常简陋的时间和空间复杂度计算方法</p>
 <blockquote>
 <p>时间复杂度： 一层for循环就是n的一次方，两层嵌套就是n²，只算最高次的。用了二分法的就跟log有关系。</p>
 <p>空间复杂度：用了额外空间就不是O(1)了，具体多少就看开了多少内存。</p>
@@ -203,8 +237,29 @@
 <p><strong>栈、堆和队列</strong></p>
 <p>两个栈做一个队列</p>
 <p>两个队列做一个栈</p>
+<p><strong>树、堆、二叉树</strong></p>
+<p>不记得了等我再看看</p>
 <p><strong>哈希表的原理</strong></p>
 <p>这玩意我觉得非常之坑，用起来稀里糊涂的，但是消除时间复杂度又很好用显得你很专业</p>
+<p>例题：Two Sum</p>
+<blockquote>
+<p>class Solution {</p>
+<p>public:</p>
+<p>  vector<int> twoSum(vector<int>&amp; nums, int target) {<br>​    map&lt;int,int&gt; mp;<br>​    vector<int> a(2,-1);<br>​    int i = 0;</int></int></int></p>
+<p>​    for (i = 0; i &lt; nums.size(); i++){<br>​      mp.insert(pair&lt;int,int&gt;(nums[i],i));<br>​<br>​      if ((mp.count(target - nums[i]) &gt; 0) &amp;&amp; (mp[target-nums[i]]) != i){<br>​        a[1] = i;<br>​        a[0] = mp[target-nums[i]];<br>​      }<br>​<br>​    }<br>​    return a;<br>  }<br>};</p>
+</blockquote>
+<p>例题：LRU缓存机制</p>
+<blockquote>
+<p>class LRUCache {</p>
+<p>public:</p>
+<p>  struct CacheNode {<br>​    int key;<br>​    int value;<br>​    CacheNode *pre, *next;<br>​    CacheNode(int key, int value): key(key),value(value),pre(NULL),next(NULL){}<br>  };</p>
+<p>  map&lt;int, CacheNode*&gt; mp;<br>  CacheNode *head, *tail;<br>  int size;</p>
+<p>  LRUCache(int capacity) {<br>​    size = capacity;<br>​    head = NULL;<br>​    tail = NULL;<br>  }</p>
+<p>  void remove(CacheNode* p){<br>​    if (p-&gt;pre != NULL) {<br>​      p-&gt;pre-&gt;next = p-&gt;next;<br>​    } else {<br>​      head = p-&gt;next;<br>​    }<br>​    if (p-&gt;next != NULL) {<br>​      p-&gt;next-&gt;pre = p-&gt;pre;<br>​    } else {<br>​      tail = p-&gt;pre;<br>​    }<br>  }</p>
+<p>  void setHead(CacheNode*p){<br>​    p-&gt;next = head;<br>​    p-&gt;pre = NULL;<br>​    if (head != NULL){<br>​      head-&gt;pre = p;<br>​    }<br>​    head = p;<br>​    if (tail == NULL){<br>​      tail = head;<br>​    }<br>  }  </p>
+<p>  int get(int key) {<br>​    map&lt;int,CacheNode<em>&gt;::iterator it = mp.find(key);<br>​    if (it != mp.end()){<br>​      CacheNode</em> p = it-&gt;second;<br>​      remove(p);<br>​      setHead(p);<br>​      return p-&gt;value;<br>​    } else {<br>​      return -1;<br>​    }<br>  }  </p>
+<p>  void put(int key, int value) {<br>​    map&lt;int,CacheNode<em>&gt;::iterator it = mp.find(key);<br>​    if (it != mp.end()){<br>​      CacheNode</em> p = it-&gt;second;<br>​      p-&gt;value = value;<br>​      remove(p);<br>​      setHead(p);<br>​    } else {<br>​      CacheNode <em>q = new CacheNode(key,value);<br>​      if(mp.size() &gt;= size){<br>​        map&lt;int,CacheNode</em>&gt;::iterator it2 = mp.find(tail-&gt;key);<br>​        remove(tail);<br>​        mp.erase(it2);<br>​      }<br>​      setHead(q);<br>​      mp[key] = q;<br>​    }<br>  }<br>};</p>
+</blockquote>
 <h4 id="编程基础"><a href="#编程基础" class="headerlink" title="编程基础"></a>编程基础</h4><p>多态<br>虚函数<br>闭包：java里的概念</p>
 <h4 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h4><p>进程和线程：一个进程可能包括多个线程<br>进程之间通信：socket；队列；</p>
 <h4 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h4><p>写了单独的po</p>
@@ -236,7 +291,7 @@
 
 <div class="card">
     <div class="card-content">
-        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <h3 class="menu-label has-text-centered">Suka dengan artikel ini? Bantu penulis dengan donasi melalui</h3>
         <div class="buttons is-centered">
             
         </div>
@@ -249,16 +304,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/08/14/从今往后/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/07/23/七月份的尾巴/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">八月的疑惑</span>
+                <span class="level-item">七月份的尾巴</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/07/23/七月份的尾巴/">
-                <span class="level-item">七月份的尾巴</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/07/06/hello-world/">
+                <span class="level-item">Hello World</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -270,7 +325,7 @@
 
 <div class="card">
     <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        <h3 class="title is-5 has-text-weight-normal">Comentarios</h3>
         
 <div id="valine-thread" class="content"></div>
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
@@ -330,17 +385,17 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Posts
+                        Entradas
                     </p>
                     <p class="title has-text-weight-normal">
-                        12
+                        13
                     </p>
                 </div>
             </div>
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categories
+                        Categorias
                     </p>
                     <p class="title has-text-weight-normal">
                         2
@@ -350,7 +405,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tags
+                        Etiquetas
                     </p>
                     <p class="title has-text-weight-normal">
                         3
@@ -360,7 +415,7 @@
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/carabbeam" target="_blank">
-                Follow</a>
+                SEGUIR</a>
         </div>
         
         
@@ -406,7 +461,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Catalogue
+                Catálogo
             </h3>
             <ul class="menu-list"><li>
         <a class="is-flex" href="#笔试题和面试题准备">
@@ -571,7 +626,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categories
+                Categorias
             </h3>
             <ul class="menu-list">
             <li>
@@ -580,7 +635,7 @@
                 <span class="level-item">专业</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">6</span>
+                <span class="level-item tag">7</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/生活/">
@@ -600,7 +655,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Tag Cloud
+            Nube de etiquetas
         </h3>
         <a href="/tags/日记/" style="font-size: 15px;">日记</a> <a href="/tags/杂谈/" style="font-size: 10px;">杂谈</a> <a href="/tags/笔记/" style="font-size: 20px;">笔记</a>
     </div>
@@ -614,8 +669,27 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/11/11/网络基础知识和TCP-IP协议/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="网络基础知识和TCP/IP协议">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-11T12:54:51.000Z">2019-11-11</time></div>
+                    <a href="/2019/11/11/网络基础知识和TCP-IP协议/" class="has-link-black-ter is-size-6">网络基础知识和TCP/IP协议</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/专业/">专业</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -693,25 +767,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/10/30/大数据/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="大数据相关基础概念">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-30T13:59:10.000Z">2019-10-30</time></div>
-                    <a href="/2019/10/30/大数据/" class="has-link-black-ter is-size-6">大数据相关基础概念</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/专业/">专业</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -720,7 +775,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
         
@@ -730,7 +785,7 @@
                     <span class="level-item">November 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -788,7 +843,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -809,7 +864,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/笔记/">
                         <span class="tag">笔记</span>
-                        <span class="tag is-grey">5</span>
+                        <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
@@ -833,8 +888,27 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/11/11/网络基础知识和TCP-IP协议/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="网络基础知识和TCP/IP协议">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-11T12:54:51.000Z">2019-11-11</time></div>
+                    <a href="/2019/11/11/网络基础知识和TCP-IP协议/" class="has-link-black-ter is-size-6">网络基础知识和TCP/IP协议</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/专业/">专业</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -912,25 +986,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/10/30/大数据/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="大数据相关基础概念">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-30T13:59:10.000Z">2019-10-30</time></div>
-                    <a href="/2019/10/30/大数据/" class="has-link-black-ter is-size-6">大数据相关基础概念</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/专业/">专业</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -939,7 +994,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
         
@@ -949,7 +1004,7 @@
                     <span class="level-item">November 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -1007,7 +1062,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -1028,7 +1083,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/笔记/">
                         <span class="tag">笔记</span>
-                        <span class="tag is-grey">5</span>
+                        <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
@@ -1161,7 +1216,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
-<a id="back-to-top" title="Back to Top" href="javascript:;">
+<a id="back-to-top" title="Kembali ke atas" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
@@ -1207,10 +1262,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Posts',
+                POSTS: 'Entradas',
                 PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
+                CATEGORIES: 'Categorias',
+                TAGS: 'Etiquetas',
                 UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',
