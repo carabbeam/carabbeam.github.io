@@ -16,7 +16,7 @@
 <meta property="og:description" content="所有我还记得的知识点">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://carabbeam.rip/images/og_image.png">
-<meta property="og:updated_time" content="2019-11-13T04:14:24.139Z">
+<meta property="og:updated_time" content="2019-11-16T07:50:42.886Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络基础知识和TCP&#x2F;IP协议">
 <meta name="twitter:description" content="所有我还记得的知识点">
@@ -159,7 +159,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    5 minutes read (About 708 words)
+                    5 minutes read (About 740 words)
                 </span>
                 
                 
@@ -177,54 +177,71 @@
 </blockquote>
 <a id="more"></a>
 
-<h3 id="网络模型"><a href="#网络模型" class="headerlink" title="网络模型"></a>网络模型</h3><p>OSI七层模型：</p>
-<table>
+<h3 id="网络模型"><a href="#网络模型" class="headerlink" title="网络模型"></a>网络模型</h3><table>
 <thead>
 <tr>
-<th align="center">分层</th>
+<th align="center">OSI七层</th>
 <th align="center">功能</th>
 <th align="center">相关概念</th>
+<th>TCP/IP五层</th>
+<th>TCP/IP四层</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="center">应用层</td>
 <td align="center">应用程序之间的通信</td>
 <td align="center">HTTP/Telnet/FTP/Ping</td>
+<td>应用层</td>
+<td>应用层</td>
 </tr>
 <tr>
 <td align="center">表示层</td>
 <td align="center">确定数据格式和加密</td>
 <td align="center"></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td align="center">会话层</td>
 <td align="center">建立、维护和管理会话</td>
 <td align="center"></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td align="center">传输层</td>
 <td align="center">建立主句端到端的连接</td>
 <td align="center">TCP/UDP</td>
+<td>传输层</td>
+<td>传输层</td>
 </tr>
 <tr>
 <td align="center">网络层</td>
 <td align="center">寻址和路由选择</td>
 <td align="center">IP</td>
+<td>网络层</td>
+<td>网络层</td>
 </tr>
 <tr>
 <td align="center">数据链路层</td>
 <td align="center">提供介质访问和链路管理</td>
 <td align="center">ARP/RARP</td>
+<td>数据链路层</td>
+<td>物理层</td>
 </tr>
 <tr>
 <td align="center">物理层</td>
 <td align="center">比特流的传输</td>
 <td align="center"></td>
+<td>物理层</td>
+<td></td>
 </tr>
 <tr>
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
+<td></td>
+<td></td>
 </tr>
 </tbody></table>
 <h3 id="基础二三层转发"><a href="#基础二三层转发" class="headerlink" title="基础二三层转发"></a>基础二三层转发</h3><h4 id="MAC以及它的学习和老化过程"><a href="#MAC以及它的学习和老化过程" class="headerlink" title="MAC以及它的学习和老化过程"></a>MAC以及它的学习和老化过程</h4><ol>
@@ -333,6 +350,13 @@
 
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/11/16/三天突击零基础面试宝典/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">一些常见面试题和答案</span>
+            </a>
+        </div>
         
         
         <div class="level-end">
@@ -734,6 +758,25 @@
         
         <article class="media">
             
+            <a href="/2019/11/16/三天突击零基础面试宝典/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="一些常见面试题和答案">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-16T15:10:10.000Z">2019-11-16</time></div>
+                    <a href="/2019/11/16/三天突击零基础面试宝典/" class="has-link-black-ter is-size-6">一些常见面试题和答案</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/专业/">专业</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/11/11/网络基础知识和TCP-IP协议/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="网络基础知识和TCP/IP协议">
@@ -808,25 +851,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/11/05/吴恩达机器学习笔记/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="吴恩达机器学习笔记">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-05T12:40:10.000Z">2019-11-05</time></div>
-                    <a href="/2019/11/05/吴恩达机器学习笔记/" class="has-link-black-ter is-size-6">吴恩达机器学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/专业/">专业</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -845,7 +869,7 @@
                     <span class="level-item">November 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -889,7 +913,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -953,6 +977,25 @@
         
         <article class="media">
             
+            <a href="/2019/11/16/三天突击零基础面试宝典/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="一些常见面试题和答案">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-16T15:10:10.000Z">2019-11-16</time></div>
+                    <a href="/2019/11/16/三天突击零基础面试宝典/" class="has-link-black-ter is-size-6">一些常见面试题和答案</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/专业/">专业</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/11/11/网络基础知识和TCP-IP协议/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="网络基础知识和TCP/IP协议">
@@ -1027,25 +1070,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/11/05/吴恩达机器学习笔记/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="吴恩达机器学习笔记">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-05T12:40:10.000Z">2019-11-05</time></div>
-                    <a href="/2019/11/05/吴恩达机器学习笔记/" class="has-link-black-ter is-size-6">吴恩达机器学习笔记</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/专业/">专业</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1064,7 +1088,7 @@
                     <span class="level-item">November 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">6</span>
                 </span>
             </a>
         </li>
@@ -1108,7 +1132,7 @@
                     <span class="level-item">July 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
