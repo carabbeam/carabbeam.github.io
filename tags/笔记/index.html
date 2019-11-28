@@ -151,6 +151,270 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-27T12:40:10.000Z">2019-11-27</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/专业/">专业</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 208 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/11/27/面试流程板块总结/">面试流程板块总结</a>
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p>参考他人的经验帖总结可能的面试流程和问题</p>
+</blockquote>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/11/27/面试流程板块总结/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-27T04:11:45.000Z">2019-11-27</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    8 minutes read (About 1144 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/11/27/算法课笔记1/">算法课笔记1</a>
+            
+        </h1>
+        <div class="content">
+            <h3 id="普适思想"><a href="#普适思想" class="headerlink" title="普适思想"></a>普适思想</h3><ol>
+<li>coding style</li>
+<li>考虑全面各种情况（第一步永远是边界检测）</li>
+<li>bug free</li>
+<li>交流-思考-渐进的过程</li>
+</ol>
+<h4 id="例题：strstr"><a href="#例题：strstr" class="headerlink" title="例题：strstr"></a>例题：strstr</h4><p>重点：不要总想着kmp算法，因为它仅仅只是一个算法</p>
+<p>第一步库函数(int pos = haystack.find(needle);)</p>
+<p>第二步暴力解法</p>
+<p>第三步优化</p>
+<h3 id="递归recursion的思想"><a href="#递归recursion的思想" class="headerlink" title="递归recursion的思想"></a>递归recursion的思想</h3><p>重点：使用深度优先搜索DFS实现递归==使用回溯的思想。</p>
+<h4 id="递归的三个要素："><a href="#递归的三个要素：" class="headerlink" title="递归的三个要素："></a>递归的三个要素：</h4><p>第一步：定义要用递归完成的事情</p>
+<p>第二步： 如何将问题变为子问题</p>
+<p>第三步： 什么时候退出递归（什么时候给返回值）</p>
+<p>使用深度优先搜索的情境or<strong>排列组合模板总结</strong>：</p>
+<ul>
+<li>适用范围：几乎所有的搜索问题</li>
+<li>需要做出的改动：1. 什么时候输出；2. 哪些情况需要跳过</li>
+<li>试着举例：<ul>
+<li>permutations/unique permutations</li>
+<li>combination sum/letter combination of a phone number</li>
+<li>palindrome partitioning</li>
+<li>restore ip address</li>
+</ul>
+</li>
+</ul>
+<h4 id="例题：subsets"><a href="#例题：subsets" class="headerlink" title="例题：subsets"></a>例题：subsets</h4><p>两种解法需要掌握：</p>
+<ol>
+<li><p>递归实现DFS</p>
+<p>void helper(vector&lt;vector<int> &gt;&amp; res, vector<int> tmp, vector<int>&amp; nums, int level) {</int></int></int></p>
+<pre><code>if (level &gt;= nums.size()) {
+    res.push_back(tmp);
+    return;
+}
+tmp.push_back(nums[level]);
+helper(res, tmp, nums, level + 1);
+tmp.pop_back();
+helper(res, tmp, nums, level + 1);</code></pre><p>}</p>
+<p>vector&lt;vector<int>&gt; subsets(vector<int>&amp; nums) {</int></int></p>
+<pre><code>vector&lt;vector&lt;int&gt; &gt; res;
+vector&lt;int&gt; tmp;
+helper(res, tmp, nums, 0);
+return res;</code></pre><p>}</p>
+</li>
+<li><p>考虑层序遍历求解，每次加入一个元素就扩充res的长度，直到所有元素添加完毕</p>
+<p>class Solution {<br>public:</p>
+<pre><code>vector&lt;vector&lt;int&gt;&gt; subsets(vector&lt;int&gt;&amp; nums) {
+    vector&lt;vector&lt;int&gt; &gt; res(1);
+    for(int i=0;i&lt;nums.size();i++){
+        int cnt=res.size();
+        for(int j=0;j&lt;cnt;j++){
+            vector&lt;int&gt; tmp=res[j];
+            tmp.push_back(nums[i]);
+            res.push_back(tmp);
+        }
+    }
+    return res;
+}</code></pre><p>};</p>
+</li>
+<li><p>二进制位运算解法</p>
+<p>class Solution {<br>public:</p>
+<pre><code>vector&lt;vector&lt;int&gt;&gt; subsets(vector&lt;int&gt;&amp; nums) {
+    int S = nums.size();
+    int N = 1 &lt;&lt; S;
+    vector&lt;vector&lt;int&gt; &gt; res;
+    for (int i = 0; i &lt; N; ++i) {
+        vector&lt;int&gt; v;
+        for (int j = 0; j &lt; S; ++j)
+            if (i &amp; (1 &lt;&lt; j))
+                v.push_back(nums[j]);
+        res.push_back(v);
+    }
+    return res;
+}</code></pre><p>};</p>
+</li>
+</ol>
+<h3 id="基础算法问题的-Time-Complexity"><a href="#基础算法问题的-Time-Complexity" class="headerlink" title="基础算法问题的 Time Complexity"></a>基础算法问题的 Time Complexity</h3><p>O(1) 极少</p>
+<p>O(logn) 几乎都是二分法</p>
+<p>O(n) 遍历 </p>
+<p>O(nlogn) 一般都需要排序</p>
+<p>O(n²) 数组、枚举、动态规划</p>
+<p>O(n^3)数组、枚举、动态规划</p>
+<p>O(2^n) 与组合有关的搜索</p>
+<p>O(n!) 与排列有关的搜索</p>
+<h3 id="二分法binary-search的思想"><a href="#二分法binary-search的思想" class="headerlink" title="二分法binary search的思想"></a>二分法binary search的思想</h3><p><strong>二分法中的循环仅仅是为了缩小范围，而不是获得结果</strong>，二分法的核心就是将答案的范围缩小。</p>
+<p>** 比O(n)更优的时间复杂度几乎只能是O(logn)的二分法**。</p>
+<p>T(n) = T(n/2) + O(1) = O(logn)</p>
+<p>通过O(1)的时间把规模为n的问题变为n/2=O(logn)</p>
+<p>通过O(n)的时间把规模为n的问题变为n/2=O(n)</p>
+<h4 id="recursion-or-Loop？"><a href="#recursion-or-Loop？" class="headerlink" title="recursion or Loop？"></a>recursion or Loop？</h4><p>一般使用loop，因为recursion涉及到了调用栈，占用内存较大，所以recursion不是常用解决办法。但如果recursion会更简单，可以先用recursion解决。</p>
+<h4 id="通用的二分法模板："><a href="#通用的二分法模板：" class="headerlink" title="通用的二分法模板："></a>通用的二分法模板：</h4><ol>
+<li>while (start + 1 &lt; end)<ul>
+<li>不用start &lt; end 或 start &lt;= end 或start + 1 &lt;= end 是为了防止死循环，确保在只剩最后两个数时就开始做判断</li>
+</ul>
+</li>
+<li>int mid = start + (end - start)/2<ul>
+<li>不用(start + end)/2是为了防止溢出，因为int型最大只有2^32-1</li>
+</ul>
+</li>
+<li>A[mid] == , &lt; , &gt;<ul>
+<li>不管是否可以&lt;=或&gt;=，都先判断三种情况，以确保条件判断正确。</li>
+</ul>
+</li>
+<li>A[start] , A[end] ? target<ul>
+<li>first-pos-of-target时先判断start；last-pos时先判断end</li>
+</ul>
+</li>
+<li>start = mid <ul>
+<li>不使用mid + 1是为了防止死循环（极端情况只有两个数时）</li>
+</ul>
+</li>
+<li>end = mid</li>
+</ol>
+<h4 id="例题：binary-search"><a href="#例题：binary-search" class="headerlink" title="例题：binary-search"></a>例题：binary-search</h4><p>/first-or-last-pos-of-target</p>
+<p>/search-a-2d-matrix</p>
+<p>/search-insert-pos</p>
+<p>/search-in-a-infinite-sorted-array</p>
+<p>/search-a-rotated-sorted-array</p>
+<p>/Find-peak-element</p>
+<h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>T(n) = 2T(n/2) + O(1) = O(n)</p>
+<p>T(n) = 2T(n/2) + O(n) = O(nlogn)</p>
+<h4 id="前中后序遍历"><a href="#前中后序遍历" class="headerlink" title="前中后序遍历"></a>前中后序遍历</h4><ol>
+<li>递归方法</li>
+<li>非递归方法</li>
+</ol>
+<h4 id="层次遍历（BFS-Queue）"><a href="#层次遍历（BFS-Queue）" class="headerlink" title="层次遍历（BFS-Queue）"></a>层次遍历（BFS-Queue）</h4><h4 id="maxlength-minlength-of-B-tree-Traverse-or-Divide-Conquer"><a href="#maxlength-minlength-of-B-tree-Traverse-or-Divide-Conquer" class="headerlink" title="maxlength/minlength of B-tree : Traverse or Divide-Conquer"></a>maxlength/minlength of B-tree : Traverse or Divide-Conquer</h4><h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><h3 id="链表-linked-list"><a href="#链表-linked-list" class="headerlink" title="链表 linked-list"></a>链表 linked-list</h3><h3 id="数组-array"><a href="#数组-array" class="headerlink" title="数组 array"></a>数组 array</h3><h4 id="双指针问题（Two-Sum）"><a href="#双指针问题（Two-Sum）" class="headerlink" title="双指针问题（Two Sum）"></a>双指针问题（Two Sum）</h4><ul>
+<li><p>two sum可以用hash做，也可以用相向双指针做</p>
+</li>
+<li><p>three-sum/two-sum-closest 用相向双指针</p>
+</li>
+<li><p>partition-array 思想和快排类似，典型题可以分为两部分和三部分</p>
+<ul>
+<li><p>while (i &lt;= j) {</p>
+<p>​    while (i &lt;= j &amp;&amp; a[i] &lt; target) {</p>
+<p>​        i++;</p>
+<p>​    }</p>
+<p>​    while (i &lt;= j &amp;&amp; a[j] &gt;= target) {</p>
+<p>​        j–;</p>
+<p>​    }</p>
+<p>​    if (i &lt;=j) {</p>
+<p>​        swap(a[i], a[j]);</p>
+<p>​        i++;</p>
+<p>​        j–;</p>
+<p>​    }</p>
+<p>}</p>
+<p>return j+1;</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="SubArray"><a href="#SubArray" class="headerlink" title="SubArray"></a>SubArray</h4><ul>
+<li>best time to buy and sell stock/数飞机/Maximum Array<ul>
+<li>prefix sum问题</li>
+</ul>
+</li>
+</ul>
+<h4 id="Sorted-Array"><a href="#Sorted-Array" class="headerlink" title="Sorted Array"></a>Sorted Array</h4><ul>
+<li>merge-two-sorted-array<ul>
+<li>一是可以开辟新空间的</li>
+<li>二是存在同一个数组中的，反向比较</li>
+</ul>
+</li>
+<li>两个有序数组中的中位数/第k个数<ul>
+<li>一是O(m+n)的双指针寻找</li>
+<li>二是O(logn)的二分法，两个数组的前k/</li>
+</ul>
+</li>
+<li>数组内积（点乘）</li>
+<li>intersection-可以用哈希</li>
+</ul>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-11-11T12:54:51.000Z">2019-11-11</time>
                 
                 <div class="level-item">
@@ -323,7 +587,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    2 minutes read (About 343 words)
+                    2 minutes read (About 361 words)
                 </span>
                 
                 
@@ -433,7 +697,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 445 words)
+                    4 minutes read (About 633 words)
                 </span>
                 
                 
@@ -516,7 +780,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        13
+                        15
                     </p>
                 </div>
             </div>
@@ -672,7 +936,7 @@
                 <span class="level-item">专业</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">7</span>
+                <span class="level-item tag">8</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/生活/">
@@ -711,7 +975,45 @@
         
         <article class="media">
             
-            <a href="/2019/11/16/三天突击零基础面试宝典/" class="media-left">
+            <a href="/2019/11/27/面试流程板块总结/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="面试流程板块总结">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-27T12:40:10.000Z">2019-11-27</time></div>
+                    <a href="/2019/11/27/面试流程板块总结/" class="has-link-black-ter is-size-6">面试流程板块总结</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/专业/">专业</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/11/27/算法课笔记1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="算法课笔记1">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-27T04:11:45.000Z">2019-11-27</time></div>
+                    <a href="/2019/11/27/算法课笔记1/" class="has-link-black-ter is-size-6">算法课笔记1</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/11/16/一些常见面试问题和答案/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="一些常见面试题和答案">
                 </p>
@@ -720,7 +1022,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-16T15:10:10.000Z">2019-11-16</time></div>
-                    <a href="/2019/11/16/三天突击零基础面试宝典/" class="has-link-black-ter is-size-6">一些常见面试题和答案</a>
+                    <a href="/2019/11/16/一些常见面试问题和答案/" class="has-link-black-ter is-size-6">一些常见面试题和答案</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/专业/">专业</a>
                     </p>
@@ -766,44 +1068,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/11/11/linux常用指令集合/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="linux常用指令集合">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-11T12:53:13.000Z">2019-11-11</time></div>
-                    <a href="/2019/11/11/linux常用指令集合/" class="has-link-black-ter is-size-6">linux常用指令集合</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/专业/">专业</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/11/10/git新手使用手册/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="git新手使用手册">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-10T12:51:40.000Z">2019-11-10</time></div>
-                    <a href="/2019/11/10/git新手使用手册/" class="has-link-black-ter is-size-6">git新手使用手册</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/专业/">专业</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -822,7 +1086,7 @@
                     <span class="level-item">November 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">8</span>
                 </span>
             </a>
         </li>
@@ -901,7 +1165,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/笔记/">
                         <span class="tag">笔记</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
@@ -930,7 +1194,45 @@
         
         <article class="media">
             
-            <a href="/2019/11/16/三天突击零基础面试宝典/" class="media-left">
+            <a href="/2019/11/27/面试流程板块总结/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="面试流程板块总结">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-27T12:40:10.000Z">2019-11-27</time></div>
+                    <a href="/2019/11/27/面试流程板块总结/" class="has-link-black-ter is-size-6">面试流程板块总结</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/专业/">专业</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/11/27/算法课笔记1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="算法课笔记1">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-27T04:11:45.000Z">2019-11-27</time></div>
+                    <a href="/2019/11/27/算法课笔记1/" class="has-link-black-ter is-size-6">算法课笔记1</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/11/16/一些常见面试问题和答案/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="一些常见面试题和答案">
                 </p>
@@ -939,7 +1241,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-16T15:10:10.000Z">2019-11-16</time></div>
-                    <a href="/2019/11/16/三天突击零基础面试宝典/" class="has-link-black-ter is-size-6">一些常见面试题和答案</a>
+                    <a href="/2019/11/16/一些常见面试问题和答案/" class="has-link-black-ter is-size-6">一些常见面试题和答案</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/专业/">专业</a>
                     </p>
@@ -985,44 +1287,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/11/11/linux常用指令集合/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="linux常用指令集合">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-11T12:53:13.000Z">2019-11-11</time></div>
-                    <a href="/2019/11/11/linux常用指令集合/" class="has-link-black-ter is-size-6">linux常用指令集合</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/专业/">专业</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/11/10/git新手使用手册/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="git新手使用手册">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-10T12:51:40.000Z">2019-11-10</time></div>
-                    <a href="/2019/11/10/git新手使用手册/" class="has-link-black-ter is-size-6">git新手使用手册</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/专业/">专业</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1041,7 +1305,7 @@
                     <span class="level-item">November 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">8</span>
                 </span>
             </a>
         </li>
@@ -1120,7 +1384,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/笔记/">
                         <span class="tag">笔记</span>
-                        <span class="tag is-grey">6</span>
+                        <span class="tag is-grey">8</span>
                     </a>
                 </div>
                 
