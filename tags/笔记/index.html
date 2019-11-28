@@ -211,7 +211,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    8 minutes read (About 1144 words)
+                    10 minutes read (About 1461 words)
                 </span>
                 
                 
@@ -232,7 +232,7 @@
 </ol>
 <h4 id="例题：strstr"><a href="#例题：strstr" class="headerlink" title="例题：strstr"></a>例题：strstr</h4><p>重点：不要总想着kmp算法，因为它仅仅只是一个算法</p>
 <p>第一步库函数(int pos = haystack.find(needle);)</p>
-<p>第二步暴力解法</p>
+<p>第二步暴力解法 (for循环嵌套)</p>
 <p>第三步优化</p>
 <h3 id="递归recursion的思想"><a href="#递归recursion的思想" class="headerlink" title="递归recursion的思想"></a>递归recursion的思想</h3><p>重点：使用深度优先搜索DFS实现递归==使用回溯的思想。</p>
 <h4 id="递归的三个要素："><a href="#递归的三个要素：" class="headerlink" title="递归的三个要素："></a>递归的三个要素：</h4><p>第一步：定义要用递归完成的事情</p>
@@ -253,51 +253,14 @@
 <h4 id="例题：subsets"><a href="#例题：subsets" class="headerlink" title="例题：subsets"></a>例题：subsets</h4><p>两种解法需要掌握：</p>
 <ol>
 <li><p>递归实现DFS</p>
-<p>void helper(vector&lt;vector<int> &gt;&amp; res, vector<int> tmp, vector<int>&amp; nums, int level) {</int></int></int></p>
-<pre><code>if (level &gt;= nums.size()) {
-    res.push_back(tmp);
-    return;
-}
-tmp.push_back(nums[level]);
-helper(res, tmp, nums, level + 1);
-tmp.pop_back();
-helper(res, tmp, nums, level + 1);</code></pre><p>}</p>
-<p>vector&lt;vector<int>&gt; subsets(vector<int>&amp; nums) {</int></int></p>
-<pre><code>vector&lt;vector&lt;int&gt; &gt; res;
-vector&lt;int&gt; tmp;
-helper(res, tmp, nums, 0);
-return res;</code></pre><p>}</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">helper</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &gt;&amp; res, </span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-params">            <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; tmp, </span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-params">            <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums, </span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-params">            <span class="hljs-keyword">int</span> level)</span> </span>&#123;</span><br><span class="line">	<span class="hljs-keyword">if</span> (level &gt;= nums.size()) &#123;</span><br><span class="line">		res.push_back(tmp);</span><br><span class="line">		<span class="hljs-keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	tmp.push_back(nums[level]);</span><br><span class="line">	helper(res, tmp, nums, level + <span class="hljs-number">1</span>);</span><br><span class="line">	tmp.pop_back();</span><br><span class="line">	helper(res, tmp, nums, level + <span class="hljs-number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; subsets(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">	<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &gt; res;</span><br><span class="line">	<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; tmp;</span><br><span class="line">	helper(res, tmp, nums, <span class="hljs-number">0</span>);</span><br><span class="line">	<span class="hljs-keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>考虑层序遍历求解，每次加入一个元素就扩充res的长度，直到所有元素添加完毕</p>
-<p>class Solution {<br>public:</p>
-<pre><code>vector&lt;vector&lt;int&gt;&gt; subsets(vector&lt;int&gt;&amp; nums) {
-    vector&lt;vector&lt;int&gt; &gt; res(1);
-    for(int i=0;i&lt;nums.size();i++){
-        int cnt=res.size();
-        for(int j=0;j&lt;cnt;j++){
-            vector&lt;int&gt; tmp=res[j];
-            tmp.push_back(nums[i]);
-            res.push_back(tmp);
-        }
-    }
-    return res;
-}</code></pre><p>};</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span></span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; subsets(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &gt; res(<span class="hljs-number">1</span>);</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">            <span class="hljs-keyword">int</span> cnt=res.size();</span><br><span class="line">            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;cnt;j++)&#123;</span><br><span class="line">                <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; tmp=res[j];</span><br><span class="line">                tmp.push_back(nums[i]);</span><br><span class="line">                res.push_back(tmp);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>二进制位运算解法</p>
-<p>class Solution {<br>public:</p>
-<pre><code>vector&lt;vector&lt;int&gt;&gt; subsets(vector&lt;int&gt;&amp; nums) {
-    int S = nums.size();
-    int N = 1 &lt;&lt; S;
-    vector&lt;vector&lt;int&gt; &gt; res;
-    for (int i = 0; i &lt; N; ++i) {
-        vector&lt;int&gt; v;
-        for (int j = 0; j &lt; S; ++j)
-            if (i &amp; (1 &lt;&lt; j))
-                v.push_back(nums[j]);
-        res.push_back(v);
-    }
-    return res;
-}</code></pre><p>};</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span></span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; subsets(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> S = nums.size();</span><br><span class="line">        <span class="hljs-keyword">int</span> N = <span class="hljs-number">1</span> &lt;&lt; S;</span><br><span class="line">        <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &gt; res;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">            <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; v;</span><br><span class="line">            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; S; ++j)</span><br><span class="line">                <span class="hljs-keyword">if</span> (i &amp; (<span class="hljs-number">1</span> &lt;&lt; j))</span><br><span class="line">                    v.push_back(nums[j]);</span><br><span class="line">            res.push_back(v);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
 <h3 id="基础算法问题的-Time-Complexity"><a href="#基础算法问题的-Time-Complexity" class="headerlink" title="基础算法问题的 Time Complexity"></a>基础算法问题的 Time Complexity</h3><p>O(1) 极少</p>
@@ -346,32 +309,36 @@ return res;</code></pre><p>}</p>
 <h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>T(n) = 2T(n/2) + O(1) = O(n)</p>
 <p>T(n) = 2T(n/2) + O(n) = O(nlogn)</p>
 <h4 id="前中后序遍历"><a href="#前中后序遍历" class="headerlink" title="前中后序遍历"></a>前中后序遍历</h4><ol>
-<li>递归方法</li>
-<li>非递归方法</li>
+<li><p>递归方法</p>
+</li>
+<li><p>非递归方法-利用栈进行遍历</p>
+<h5 id="前序"><a href="#前序" class="headerlink" title="前序"></a>前序</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">栈S;</span><br><span class="line">p= root;</span><br><span class="line">while(p || S不空)&#123;</span><br><span class="line">    while(p)&#123;</span><br><span class="line">        访问p节点；</span><br><span class="line">        p的右子树入S;</span><br><span class="line">        p = p的左子树;</span><br><span class="line">    &#125;</span><br><span class="line">    p = S栈顶弹出;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; preorderTraversal(TreeNode* root) &#123;</span><br><span class="line">    <span class="hljs-built_in">stack</span>&lt;TreeNode*&gt; S;</span><br><span class="line">    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; v;</span><br><span class="line">    TreeNode* rt = root;</span><br><span class="line">    <span class="hljs-keyword">while</span>(rt || S.size())&#123;</span><br><span class="line">        <span class="hljs-keyword">while</span>(rt)&#123;</span><br><span class="line">            S.push(rt-&gt;right);</span><br><span class="line">            v.push_back(rt-&gt;val);</span><br><span class="line">            rt=rt-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line">        rt=S.top();S.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> v;        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="后序"><a href="#后序" class="headerlink" title="后序"></a>后序</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">栈S;</span><br><span class="line">p= root;</span><br><span class="line">while(p || S不空)&#123;</span><br><span class="line"> while(p)&#123;</span><br><span class="line"> 		访问p节点；</span><br><span class="line">		 p的左子树入S;</span><br><span class="line"> 		p = p的右子树;</span><br><span class="line"> 	&#125;</span><br><span class="line"> 	p = S栈顶弹出;</span><br><span class="line">&#125;</span><br><span class="line">结果序列逆序;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; postorderTraversal(TreeNode* root) &#123;</span><br><span class="line">    <span class="hljs-built_in">stack</span>&lt;TreeNode*&gt; S;</span><br><span class="line">    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; v;</span><br><span class="line">    TreeNode* rt = root;</span><br><span class="line">    <span class="hljs-keyword">while</span>(rt || S.size())&#123;</span><br><span class="line">        <span class="hljs-keyword">while</span>(rt)&#123;</span><br><span class="line">            S.push(rt-&gt;left);</span><br><span class="line">            v.push_back(rt-&gt;val);</span><br><span class="line">            rt=rt-&gt;right;</span><br><span class="line">        &#125;</span><br><span class="line">        rt=S.top();S.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    reverse(v.begin(),v.end());</span><br><span class="line">    <span class="hljs-keyword">return</span> v;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="中序"><a href="#中序" class="headerlink" title="中序"></a>中序</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">栈S;</span><br><span class="line">  p= root;</span><br><span class="line">	  while(p || S不空)&#123;</span><br><span class="line">		      while(p)&#123;</span><br><span class="line">		          p入S;</span><br><span class="line">		          p = p的左子树;</span><br><span class="line">		      &#125;</span><br><span class="line">		      p = S.top 出栈;</span><br><span class="line">      访问p;</span><br><span class="line">      p = p的右子树;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; inorderTraversal(TreeNode* root) &#123;</span><br><span class="line">    <span class="hljs-built_in">stack</span>&lt;TreeNode*&gt; S;</span><br><span class="line">    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; v;</span><br><span class="line">    TreeNode* rt = root;</span><br><span class="line">    <span class="hljs-keyword">while</span>(rt || S.size())&#123;</span><br><span class="line">        <span class="hljs-keyword">while</span>(rt)&#123;</span><br><span class="line">            S.push(rt);</span><br><span class="line">            rt=rt-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line">        rt=S.top();S.pop();</span><br><span class="line">        v.push_back(rt-&gt;val);</span><br><span class="line">        rt=rt-&gt;right;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> v;        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
 </ol>
-<h4 id="层次遍历（BFS-Queue）"><a href="#层次遍历（BFS-Queue）" class="headerlink" title="层次遍历（BFS-Queue）"></a>层次遍历（BFS-Queue）</h4><h4 id="maxlength-minlength-of-B-tree-Traverse-or-Divide-Conquer"><a href="#maxlength-minlength-of-B-tree-Traverse-or-Divide-Conquer" class="headerlink" title="maxlength/minlength of B-tree : Traverse or Divide-Conquer"></a>maxlength/minlength of B-tree : Traverse or Divide-Conquer</h4><h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><h3 id="链表-linked-list"><a href="#链表-linked-list" class="headerlink" title="链表 linked-list"></a>链表 linked-list</h3><h3 id="数组-array"><a href="#数组-array" class="headerlink" title="数组 array"></a>数组 array</h3><h4 id="双指针问题（Two-Sum）"><a href="#双指针问题（Two-Sum）" class="headerlink" title="双指针问题（Two Sum）"></a>双指针问题（Two Sum）</h4><ul>
+<h4 id="层次遍历（BFS-Queue）"><a href="#层次遍历（BFS-Queue）" class="headerlink" title="层次遍历（BFS-Queue）"></a>层次遍历（BFS-Queue）</h4><h4 id="maxlength-minlength-of-B-tree-Traverse-or-Divide-Conquer"><a href="#maxlength-minlength-of-B-tree-Traverse-or-Divide-Conquer" class="headerlink" title="maxlength/minlength of B-tree : Traverse or Divide-Conquer"></a>maxlength/minlength of B-tree : Traverse or Divide-Conquer</h4><ul>
+<li><p>分治的方法优于遍历的方法</p>
+<p>这是因为分治不会一直传结果，而遍历会把结果当成参数传下去，造成冗余。</p>
+</li>
+</ul>
+<h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><h3 id="链表-linked-list"><a href="#链表-linked-list" class="headerlink" title="链表 linked-list"></a>链表 linked-list</h3><h3 id="数组-array"><a href="#数组-array" class="headerlink" title="数组 array"></a>数组 array</h3><h4 id="双指针问题（Two-Sum）"><a href="#双指针问题（Two-Sum）" class="headerlink" title="双指针问题（Two Sum）"></a>双指针问题（Two Sum）</h4><ul>
 <li><p>two sum可以用hash做，也可以用相向双指针做</p>
 </li>
 <li><p>three-sum/two-sum-closest 用相向双指针</p>
 </li>
 <li><p>partition-array 思想和快排类似，典型题可以分为两部分和三部分</p>
-<ul>
-<li><p>while (i &lt;= j) {</p>
-<p>​    while (i &lt;= j &amp;&amp; a[i] &lt; target) {</p>
-<p>​        i++;</p>
-<p>​    }</p>
-<p>​    while (i &lt;= j &amp;&amp; a[j] &gt;= target) {</p>
-<p>​        j–;</p>
-<p>​    }</p>
-<p>​    if (i &lt;=j) {</p>
-<p>​        swap(a[i], a[j]);</p>
-<p>​        i++;</p>
-<p>​        j–;</p>
-<p>​    }</p>
-<p>}</p>
-<p>return j+1;</p>
-</li>
-</ul>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> <span class="hljs-keyword">while</span> (i &lt;= j) &#123;</span><br><span class="line">   <span class="hljs-keyword">while</span> (i &lt;= j &amp;&amp; a[i] &lt; target) &#123;</span><br><span class="line"> 		i++;</span><br><span class="line">&#125;</span><br><span class="line">     <span class="hljs-keyword">while</span> (i &lt;= j &amp;&amp; a[j] &gt;= target) &#123;</span><br><span class="line">	j--;</span><br><span class="line"> 	&#125;</span><br><span class="line"><span class="hljs-keyword">if</span> (i &lt;=j) &#123;</span><br><span class="line"> 		swap(a[i], a[j]);</span><br><span class="line">	i++;</span><br><span class="line"> 		j--;</span><br><span class="line">&#125;</span><br><span class="line">   &#125;</span><br><span class="line"> <span class="hljs-keyword">return</span> j+<span class="hljs-number">1</span>;</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h4 id="SubArray"><a href="#SubArray" class="headerlink" title="SubArray"></a>SubArray</h4><ul>
@@ -381,16 +348,26 @@ return res;</code></pre><p>}</p>
 </li>
 </ul>
 <h4 id="Sorted-Array"><a href="#Sorted-Array" class="headerlink" title="Sorted Array"></a>Sorted Array</h4><ul>
-<li>merge-two-sorted-array<ul>
+<li><p>merge-two-sorted-array</p>
+<ul>
 <li>一是可以开辟新空间的</li>
 <li>二是存在同一个数组中的，反向比较</li>
 </ul>
 </li>
-<li>两个有序数组中的中位数/第k个数<ul>
-<li>一是O(m+n)的双指针寻找</li>
-<li>二是O(logn)的二分法，两个数组的前k/</li>
+<li><p>两个有序数组中的中位数/第k个数</p>
+<ul>
+<li><p>一是O(m+n)的双指针寻找</p>
+</li>
+<li><p>二是O(logn)的二分法，两个数组的前k/2</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">比较nums1[k/<span class="hljs-number">2</span>]和nums2[k/<span class="hljs-number">2</span>]的大小</span><br><span class="line">    小的那个数组count+k/<span class="hljs-number">2</span>；</span><br><span class="line">    k = k - k/<span class="hljs-number">2</span>;</span><br><span class="line">直到取到第k个</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
 </ul>
 </li>
+</ul>
+<ul>
 <li>数组内积（点乘）</li>
 <li>intersection-可以用哈希</li>
 </ul>
