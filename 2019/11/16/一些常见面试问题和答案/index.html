@@ -16,7 +16,7 @@
 <meta property="og:description" content="本文献给跟我一样虽然屁都不会但是谜一样的自信地投了软开岗位的旁友们 希望我们都能获得尘世间的幸福">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://carabbeam.rip/images/og_image.png">
-<meta property="og:updated_time" content="2019-11-28T14:25:00.007Z">
+<meta property="og:updated_time" content="2019-12-02T03:57:18.127Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些常见面试题和答案">
 <meta name="twitter:description" content="本文献给跟我一样虽然屁都不会但是谜一样的自信地投了软开岗位的旁友们 希望我们都能获得尘世间的幸福">
@@ -159,7 +159,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    43 minutes read (About 6484 words)
+                    an hour read (About 7173 words)
                 </span>
                 
                 
@@ -306,12 +306,17 @@
 <h4 id="编程语言的区别"><a href="#编程语言的区别" class="headerlink" title="编程语言的区别"></a>编程语言的区别</h4><h5 id="JAVA-C-C-SCALA"><a href="#JAVA-C-C-SCALA" class="headerlink" title="JAVA/C/C++/SCALA"></a>JAVA/C/C++/SCALA</h5><p>C是面向过程的。JAVA和C++是面向对象的。SCALA比较新。</p>
 <h5 id="面向对象编程与函数式编程"><a href="#面向对象编程与函数式编程" class="headerlink" title="面向对象编程与函数式编程"></a>面向对象编程与函数式编程</h5><p>面向对象编程：<strong>封装、继承、多态</strong>；相对于面向过程而言的</p>
 <p>基于对象编程：支持类但不支持多态，不提供抽象、继承和重载等有关面向对象语言的功能。</p>
-<h5 id="例题：-C-弱指针，智能指针weak-ptr"><a href="#例题：-C-弱指针，智能指针weak-ptr" class="headerlink" title="例题： C++弱指针，智能指针weak_ptr"></a>例题： C++弱指针，智能指针weak_ptr</h5><p>STL提供的智能指针一共有四种：auto_ptr(已经淘汰)、unique_ptr、shared_ptr和weak_ptr。</p>
+<h5 id="例题：-C-弱指针，智能指针weak-ptr-防止内存泄漏"><a href="#例题：-C-弱指针，智能指针weak-ptr-防止内存泄漏" class="headerlink" title="例题： C++弱指针，智能指针weak_ptr 防止内存泄漏"></a>例题： C++弱指针，智能指针weak_ptr 防止内存泄漏</h5><p>STL提供的智能指针一共有四种：auto_ptr(已经淘汰)、unique_ptr、shared_ptr和weak_ptr。</p>
 <p>unique_ptr：</p>
-<p>shared_ptr：</p>
+<p>shared_ptr：shared_ptr使用引用计数，每一个shared_ptr的拷贝都指向相同的内存。在最后一个shared_ptr析构的时候，内存才会被释放。</p>
 <p>weak_ptr：是一个引用计数型智能指针，不增加对象的引用计数，即弱引用。弱引用并不修改该对象的引用计数，这意味着弱引用并不对对象的内存进行管理，只要把循环引用的乙方使用弱引用即可解除循环引用。</p>
+<p>弱引用的智能指针weak_ptr是用来监视shared_ptr的，不会使引用计数加一，它不管理shared_ptr内部的指针，主要是为了监视shared_ptr的生命周期，更像是shared_ptr的一个助手。weak_ptr没有重载运算符*和-&gt;，因为它不共享指针，不能操作资源，主要是为了通过shared_ptr获得资源的监测权，它的构造不会增加引用计数，它的析构不会减少引用计数，纯粹只是作为一个旁观者来监视shared_ptr中关连的资源是否存在。 weak_ptr还可以用来返回this指针和解决循环引用的问题。</p>
 <p>strong_ptr是强引用，只要有一个指向对象的shared_ptr存在，该对象就不会被析构，直到指向对象的最后一个shared_ptr析构或是reset()时才会被销毁。利用weak_ptr可以解决常见的空悬指针问题以及循环引用问题。</p>
-<h4 id="例题：C-的内存和memory-leak，编译过程中的内存分配"><a href="#例题：C-的内存和memory-leak，编译过程中的内存分配" class="headerlink" title="例题：C++的内存和memory leak，编译过程中的内存分配"></a>例题：C++的内存和memory leak，编译过程中的内存分配</h4><h4 id="例题：-const的使用（指针数组和数组指针辨析）"><a href="#例题：-const的使用（指针数组和数组指针辨析）" class="headerlink" title="例题： const的使用（指针数组和数组指针辨析）"></a>例题： const的使用（指针数组和数组指针辨析）</h4><h3 id="4-操作系统"><a href="#4-操作系统" class="headerlink" title="4. 操作系统"></a>4. 操作系统</h3><h4 id="进程和线程：一个进程可能包括多个线程"><a href="#进程和线程：一个进程可能包括多个线程" class="headerlink" title="进程和线程：一个进程可能包括多个线程"></a>进程和线程：一个进程可能包括多个线程</h4><p>线程是操作系统能够进行运算调度的最小单位，它被包含在进程之中，是进程中的实际运作单位，可以使用多线程对进行运算提速。</p>
+<h4 id="例题：C-的内存和memory-leak，编译过程中的内存分配"><a href="#例题：C-的内存和memory-leak，编译过程中的内存分配" class="headerlink" title="例题：C++的内存和memory leak，编译过程中的内存分配"></a>例题：C++的内存和memory leak，编译过程中的内存分配</h4><p>内存泄漏(memory leak)是指由于疏忽或错误造成了程序未能释放掉不再使用的内存的情况。内存泄漏并非指内存在物理上的消失，而是程序分配某段内存后，由于设计错误，失去了对该段内存的控制，因而造成了内存的浪费。</p>
+<p>（1）堆内存泄漏 （Heap leak）。对内存指的是程序运行中根据需要分配通过malloc,realloc new等从堆中分配的一块内存，再是完成后必须通过调用对应的 free或者delete 删掉。如果程序的设计的错误导致这部分内存没有被释放，那么此后这块内存将不会被使用，就会产生Heap<br> Leak.<br>（2）系统资源泄露（Resource Leak）.主要指程序使用系统分配的资源比如 Bitmap,handle ,SOCKET等没有使用相应的函数释放掉，导致系统资源的浪费，严重可导致系统效能降低，系统运行不稳定。 </p>
+<h4 id="例题：-const的使用（指针数组和数组指针辨析）"><a href="#例题：-const的使用（指针数组和数组指针辨析）" class="headerlink" title="例题： const的使用（指针数组和数组指针辨析）"></a>例题： const的使用（指针数组和数组指针辨析）</h4><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> *p;  <span class="hljs-comment">//修饰int 即*p指向的内容不变</span></span><br><span class="line"><span class="hljs-keyword">int</span> <span class="hljs-keyword">const</span> *p;  <span class="hljs-comment">//修饰int 即*p指向的内容不变</span></span><br><span class="line"><span class="hljs-keyword">int</span>* <span class="hljs-keyword">const</span> p;  <span class="hljs-comment">//修饰int* 即*p不能改变指向的地址</span></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span>* <span class="hljs-keyword">const</span> p;  <span class="hljs-comment">//都不能变</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> a = <span class="hljs-number">10</span>;</span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> &amp;b = a;</span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> &amp;c = <span class="hljs-number">20</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-操作系统"><a href="#4-操作系统" class="headerlink" title="4. 操作系统"></a>4. 操作系统</h3><h4 id="进程和线程：一个进程可能包括多个线程"><a href="#进程和线程：一个进程可能包括多个线程" class="headerlink" title="进程和线程：一个进程可能包括多个线程"></a>进程和线程：一个进程可能包括多个线程</h4><p>线程是操作系统能够进行运算调度的最小单位，它被包含在进程之中，是进程中的实际运作单位，可以使用多线程对进行运算提速。</p>
 <h4 id="进程之间通信："><a href="#进程之间通信：" class="headerlink" title="进程之间通信："></a>进程之间通信：</h4><p>管道：半双工；只用于具有亲缘关系的进程；特殊的文件，可以read、write但只存在内存中；速度慢，容量有限</p>
 <p>FIFO：命名管道；任何进程间都能通讯，但速度慢   </p>
 <p>socket：</p>
@@ -326,6 +331,8 @@
 <p>先获取任务，加互斥锁，将该任务加入任务列表，解锁，然后唤醒一个任务，让其进行等待。</p>
 <p>析构函数 ~ThreadPool()：</p>
 <p>唤醒所有的工作，让线程一个个的执行。</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> blablabla</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="hljs-keyword">int</span> first;</span><br><span class="line">    <span class="hljs-keyword">int</span> last;</span><br><span class="line">    <span class="hljs-keyword">int</span> result;</span><br><span class="line">&#125; MY_ARGS;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span>* <span class="hljs-title">myfun</span><span class="hljs-params">(<span class="hljs-keyword">void</span>* args)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;</span><br><span class="line">    MY_ARGS* my_args = (MY_ARGS*) args;</span><br><span class="line">    <span class="hljs-keyword">int</span> first = my_args -&gt; first;</span><br><span class="line">    <span class="hljs-keyword">int</span> last = my_args -&gt; last;</span><br><span class="line">    pthread_mutex_lock(&amp;lock);</span><br><span class="line">    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10000</span>; i++)&#123;</span><br><span class="line">        s = s + arr[i]; </span><br><span class="line">    &#125;</span><br><span class="line">    my_args -&gt; result = s;</span><br><span class="line">    pthread_mutex_unlock(&amp;lock);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span> <span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> i;</span><br><span class="line">    <span class="hljs-keyword">pthread_t</span> th1;</span><br><span class="line">    <span class="hljs-keyword">pthread_t</span> th2;</span><br><span class="line">    pthread_mutex_init(&amp;lock, <span class="hljs-literal">NULL</span>);</span><br><span class="line">    MY_ARGS args1 = &#123;<span class="hljs-number">0</span>, <span class="hljs-number">2500</span>, <span class="hljs-number">0</span>&#125;;</span><br><span class="line">    MY_ARGS args2 = &#123;<span class="hljs-number">2500</span>, <span class="hljs-number">5000</span>, <span class="hljs-number">0</span>&#125;;</span><br><span class="line">    </span><br><span class="line">    pthread_create(&amp;th1, <span class="hljs-literal">NULL</span>, myfunc, &amp;args1);</span><br><span class="line">    pthread_create(&amp;th2, <span class="hljs-literal">NULL</span>, myfunc, &amp;args2);</span><br><span class="line">    pthread_join(th1, <span class="hljs-literal">NULL</span>);</span><br><span class="line">    pthread_join(th2, <span class="hljs-literal">NULL</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h5 id="例题：在Windows的一个磁盘下新建文件夹的系统操作过程"><a href="#例题：在Windows的一个磁盘下新建文件夹的系统操作过程" class="headerlink" title="例题：在Windows的一个磁盘下新建文件夹的系统操作过程"></a>例题：在Windows的一个磁盘下新建文件夹的系统操作过程</h5><h5 id="例题：在Linux系统中如果已知一个进程名，怎么输出PID号？-（ps和top命令？"><a href="#例题：在Linux系统中如果已知一个进程名，怎么输出PID号？-（ps和top命令？" class="headerlink" title="例题：在Linux系统中如果已知一个进程名，怎么输出PID号？ （ps和top命令？"></a>例题：在Linux系统中如果已知一个进程名，怎么输出PID号？ （ps和top命令？</h5><blockquote>
 <p>ps -ef |grep “name” | grep -v grep</p>
 </blockquote>
@@ -360,7 +367,7 @@
 
 <h4 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h4><p><strong>递归的暴力解法 -&gt; 带备忘录的递归解法 -&gt; 非递归的动态规划解法</strong></p>
 <p><a href="https://leetcode-cn.com/problems/coin-change/solution/dong-tai-gui-hua-tao-lu-xiang-jie-by-wei-lai-bu-ke/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/coin-change/solution/dong-tai-gui-hua-tao-lu-xiang-jie-by-wei-lai-bu-ke/</a></p>
-<h5 id="例题：暑假作业、凑硬币"><a href="#例题：暑假作业、凑硬币" class="headerlink" title="例题：暑假作业、凑硬币"></a>例题：暑假作业、凑硬币</h5><h4 id="二分法"><a href="#二分法" class="headerlink" title="二分法"></a>二分法</h4><h5 id="例题：希尔排序、快排"><a href="#例题：希尔排序、快排" class="headerlink" title="例题：希尔排序、快排"></a>例题：希尔排序、快排</h5><h4 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h4><h5 id="例题：滑雪问题"><a href="#例题：滑雪问题" class="headerlink" title="例题：滑雪问题"></a>例题：滑雪问题</h5><h4 id="广度优先搜索"><a href="#广度优先搜索" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h4><h5 id="例题：不晓得"><a href="#例题：不晓得" class="headerlink" title="例题：不晓得"></a>例题：不晓得</h5><h4 id="堆的使用"><a href="#堆的使用" class="headerlink" title="堆的使用"></a>堆的使用</h4><h5 id="例题：高频词（TopK-frequentword）、堆排序"><a href="#例题：高频词（TopK-frequentword）、堆排序" class="headerlink" title="例题：高频词（TopK frequentword）、堆排序"></a>例题：高频词（TopK frequentword）、堆排序</h5><h3 id="7-数据库"><a href="#7-数据库" class="headerlink" title="7. 数据库"></a>7. 数据库</h3><h4 id="SQL与NoSQL的区别，MySQL又是什么"><a href="#SQL与NoSQL的区别，MySQL又是什么" class="headerlink" title="SQL与NoSQL的区别，MySQL又是什么"></a>SQL与NoSQL的区别，MySQL又是什么</h4>
+<h5 id="例题：暑假作业、凑硬币"><a href="#例题：暑假作业、凑硬币" class="headerlink" title="例题：暑假作业、凑硬币"></a>例题：暑假作业、凑硬币</h5><h4 id="二分法"><a href="#二分法" class="headerlink" title="二分法"></a>二分法</h4><h5 id="例题：希尔排序、快排"><a href="#例题：希尔排序、快排" class="headerlink" title="例题：希尔排序、快排"></a>例题：希尔排序、快排</h5><h4 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h4><h5 id="例题：滑雪问题"><a href="#例题：滑雪问题" class="headerlink" title="例题：滑雪问题"></a>例题：滑雪问题</h5><h4 id="广度优先搜索"><a href="#广度优先搜索" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h4><h5 id="例题：层次遍历"><a href="#例题：层次遍历" class="headerlink" title="例题：层次遍历"></a>例题：层次遍历</h5><h4 id="堆的使用"><a href="#堆的使用" class="headerlink" title="堆的使用"></a>堆的使用</h4><h5 id="例题：高频词（TopK-frequentword）、堆排序"><a href="#例题：高频词（TopK-frequentword）、堆排序" class="headerlink" title="例题：高频词（TopK frequentword）、堆排序"></a>例题：高频词（TopK frequentword）、堆排序</h5><h3 id="7-数据库"><a href="#7-数据库" class="headerlink" title="7. 数据库"></a>7. 数据库</h3><h4 id="SQL与NoSQL的区别，MySQL又是什么"><a href="#SQL与NoSQL的区别，MySQL又是什么" class="headerlink" title="SQL与NoSQL的区别，MySQL又是什么"></a>SQL与NoSQL的区别，MySQL又是什么</h4>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -415,7 +422,7 @@
 
 <div class="card">
     <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        <h3 class="title is-5 has-text-weight-normal">Commentaires</h3>
         
 <div id="valine-thread" class="content"></div>
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
@@ -475,7 +482,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Posts
+                        Articles
                     </p>
                     <p class="title has-text-weight-normal">
                         18
@@ -485,7 +492,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categories
+                        Catégories
                     </p>
                     <p class="title has-text-weight-normal">
                         2
@@ -505,7 +512,7 @@
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/carabbeam" target="_blank">
-                Follow</a>
+                SUIVRE</a>
         </div>
         
         
@@ -674,9 +681,9 @@
         <span class="has-mr-6">3.2.2</span>
         <span>面向对象编程与函数式编程</span>
         </a></li><li>
-        <a class="is-flex" href="#例题：-C-弱指针，智能指针weak-ptr">
+        <a class="is-flex" href="#例题：-C-弱指针，智能指针weak-ptr-防止内存泄漏">
         <span class="has-mr-6">3.2.3</span>
-        <span>例题： C++弱指针，智能指针weak_ptr</span>
+        <span>例题： C++弱指针，智能指针weak_ptr 防止内存泄漏</span>
         </a></li></ul></li><li>
         <a class="is-flex" href="#例题：C-的内存和memory-leak，编译过程中的内存分配">
         <span class="has-mr-6">3.3</span>
@@ -806,9 +813,9 @@
         <span class="has-mr-6">6.5</span>
         <span>广度优先搜索</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#例题：不晓得">
+        <a class="is-flex" href="#例题：层次遍历">
         <span class="has-mr-6">6.5.1</span>
-        <span>例题：不晓得</span>
+        <span>例题：层次遍历</span>
         </a></li></ul></li><li>
         <a class="is-flex" href="#堆的使用">
         <span class="has-mr-6">6.6</span>
@@ -837,7 +844,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Links
+            Liens
         </h3>
         <ul class="menu-list">
         
@@ -908,7 +915,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categories
+                Catégories
             </h3>
             <ul class="menu-list">
             <li>
@@ -937,7 +944,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Tag Cloud
+            Nuage de tags
         </h3>
         <a href="/tags/日记/" style="font-size: 15px;">日记</a> <a href="/tags/杂谈/" style="font-size: 10px;">杂谈</a> <a href="/tags/笔记/" style="font-size: 20px;">笔记</a>
     </div>
@@ -951,7 +958,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Récents
         </h3>
         
         <article class="media">
@@ -1170,7 +1177,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Récents
         </h3>
         
         <article class="media">
@@ -1544,9 +1551,9 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Posts',
+                POSTS: 'Articles',
                 PAGES: 'Pages',
-                CATEGORIES: 'Categories',
+                CATEGORIES: 'Catégories',
                 TAGS: 'Tags',
                 UNTITLED: '(Untitled)',
             },
