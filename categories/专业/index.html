@@ -217,7 +217,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 138 words)
+                    a minute read (About 143 words)
                 </span>
                 
                 
@@ -230,12 +230,19 @@
             
         </h1>
         <div class="content">
-            <a id="more"></a>
-
-
-<h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">heapify</span> <span class="hljs-params">(<span class="hljs-keyword">int</span> tree[], <span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> i)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span> (i &gt;= n) &#123;</span><br><span class="line">        <span class="hljs-keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">int</span> max = i;</span><br><span class="line">    <span class="hljs-keyword">int</span> c1 = <span class="hljs-number">2</span>*i + <span class="hljs-number">1</span>;</span><br><span class="line">    <span class="hljs-keyword">int</span> c2 = <span class="hljs-number">2</span>*i + <span class="hljs-number">2</span>;</span><br><span class="line">    <span class="hljs-keyword">if</span> (c1 &lt; n &amp;&amp; tree[c1] &gt; tree[max]) &#123;</span><br><span class="line">        max = c1;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="hljs-keyword">if</span> (c2 &lt; n &amp;&amp; tree[c2] &gt; tree[max]) &#123;</span><br><span class="line">        max = c2;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">if</span> (max != i) &#123;</span><br><span class="line">        swap(tree, max, i);</span><br><span class="line">        heapify(tree, n, max);</span><br><span class="line">    &#125; </span><br><span class="line">&#125;    </span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">build_heap</span> <span class="hljs-params">(<span class="hljs-keyword">int</span> tree[], <span class="hljs-keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> last_node = n - <span class="hljs-number">1</span>;</span><br><span class="line">    <span class="hljs-keyword">int</span> parent = (last_node<span class="hljs-number">-1</span>)/<span class="hljs-number">2</span>;</span><br><span class="line">    <span class="hljs-keyword">int</span> i;</span><br><span class="line">    <span class="hljs-keyword">for</span> (i = parent; i &gt;= <span class="hljs-number">0</span>; i--) &#123;</span><br><span class="line">        heapify(tree, n, i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">heap_sort</span> <span class="hljs-params">(<span class="hljs-keyword">int</span> tree[], <span class="hljs-keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    build_heap(tree,n);</span><br><span class="line">    <span class="hljs-keyword">int</span> i;</span><br><span class="line">    <span class="hljs-keyword">for</span> (i = n<span class="hljs-number">-1</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;</span><br><span class="line">        swap(tree, i, <span class="hljs-number">0</span>);</span><br><span class="line">        heapify(tree, i, <span class="hljs-number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> tree[] = &#123;<span class="hljs-number">10</span>,<span class="hljs-number">6</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>&#125;;</span><br><span class="line">    <span class="hljs-keyword">int</span> n = <span class="hljs-number">6</span>;</span><br><span class="line">    <span class="hljs-comment">// heapify(tree, n, 0);</span></span><br><span class="line">    <span class="hljs-comment">// build_heap(tree, n);</span></span><br><span class="line">    <span class="hljs-comment">// heap_sort(tree, n);</span></span><br><span class="line">    <span class="hljs-keyword">int</span> i;</span><br><span class="line">    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="hljs-built_in">printf</span>(“%d\n”,tree[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <blockquote>
+<p> 堆排序笔记</p>
+</blockquote>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/11/20/堆排序/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -427,7 +434,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 minutes read (About 586 words)
+                    a minute read (About 159 words)
                 </span>
                 
                 
@@ -436,70 +443,23 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/11/11/linux/">linux考卷</a>
+                <a class="has-link-black-ter" href="/2019/11/11/linux常用指令集合/">linux常用指令集合</a>
             
         </h1>
         <div class="content">
-            <a id="more"></a>
-
-<h3 id="今日考卷题"><a href="#今日考卷题" class="headerlink" title="今日考卷题"></a>今日考卷题</h3><h3 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h3><ol>
-<li><p>执行命令chmod 746 file.txt该文件的权限是？</p>
-<p>r：4</p>
-<p>w：2</p>
-<p>c：1</p>
-<p>rwc_r–_rw-</p>
-</li>
-<li><p>需要找出/etc/my.conf文件属于哪个包（package）可以执行？</p>
-</li>
-</ol>
-<ol start="3">
-<li><p>新用户创建主目录时自动复制的文件目录是？</p>
-<p>/etc/</p>
-</li>
-<li><p>在bash中，在一条命令后加入“1&gt;&amp;2”意味着？</p>
-</li>
-</ol>
-<ol start="5">
-<li><p>哪个命令可以压缩部分文件？</p>
-<p>tar-</p>
-</li>
-<li><p>定义bash环境的用户文件是？</p>
-</li>
-<li><p>具有很多C语言功能，又称过滤器的是？</p>
-</li>
-<li><p>取ls -l输出结果的第5列的值的正确写法是？</p>
-</li>
-<li><p>shell程序里，判断文件不存在的写法是？</p>
-</li>
-</ol>
-<h3 id="填空"><a href="#填空" class="headerlink" title="填空"></a>填空</h3><ol>
-<li><p>linux系统中，以<strong>文件</strong>方式访问设备。</p>
-</li>
-<li><p>linux系统有<strong>根分区</strong>和<strong>交换分区</strong>两种分区类型。</p>
-</li>
-<li><p>DNS实际上是分布在Inernet上的主机信息的数据库，其作用是实现<strong>IP和主机名</strong>之间的转换。</p>
-</li>
-<li><p>文件权限为d-rw-_r—_r—，用数值形式表示该权限，则该八进制数为：644，该文件属性是655。</p>
-</li>
-<li><p>vi编辑器有<strong>命令</strong>和<strong>文本输入</strong>两种工作模式。</p>
-</li>
-<li><p>进程和程序的区别在于其动态性，动态的产生和终止，从产生到终止进程可以具有的基本状态为：<strong>运行态、就绪态和阻塞态</strong>。</p>
-</li>
-<li><p>硬链接只能建立<strong>对文件链接</strong>，软链接即符号链接可以跨越不同文件系统。</p>
-</li>
-<li><p>手工方法配置网络时，可以通过修改<strong>/etc/hostname</strong>文件来修改主机名，如果要配置计算机的域名解析客户端，需要配置<strong>/etc/reslov.conf</strong>文件 </p>
-</li>
-</ol>
-<p>9.可以用ls -al命令来观察文件的权限，每个文件的权限都用10位表示，并分为4段，其中第一段占1位，表示文件类型，第二段占3位，表示文件所有者对该文件的权限。 </p>
-<h3 id="问答"><a href="#问答" class="headerlink" title="问答"></a>问答</h3><ol>
-<li><p>linux系统优化的一些步骤。</p>
-</li>
-<li><p>写一个脚本，脚本名dellog.sh，脚本放在/data/scripts目录下，要求是清理目录/data/logs下的7天前的以.log结尾的文件。创建定时任务，每天凌晨1点30执行。 </p>
-</li>
-</ol>
-
+            <blockquote>
+<p>简陋，并且随时增加</p>
+</blockquote>
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/11/11/linux常用指令集合/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -528,7 +488,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 159 words)
+                    4 minutes read (About 595 words)
                 </span>
                 
                 
@@ -537,12 +497,12 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/11/11/linux常用指令集合/">linux常用指令集合</a>
+                <a class="has-link-black-ter" href="/2019/11/11/linux/">linux考卷</a>
             
         </h1>
         <div class="content">
             <blockquote>
-<p>简陋，并且随时增加</p>
+<p>一张简单考卷和答案</p>
 </blockquote>
         </div>
         
@@ -550,7 +510,7 @@
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/11/11/linux常用指令集合/#more">Read More</a>
+                <a class="button is-size-7 is-light" href="/2019/11/11/linux/#more">Read More</a>
                 </div>
             </div>
         </div>
