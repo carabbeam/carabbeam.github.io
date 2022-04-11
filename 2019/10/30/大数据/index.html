@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+<title>大数据相关基础概念 - ZIMZALABIM</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="简单的数据科学相关概念">
+<meta name="keywords" content="笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大数据相关基础概念">
+<meta property="og:url" content="http://carabbeam.rip/2019/10/30/大数据/index.html">
+<meta property="og:site_name" content="ZIMZALABIM">
+<meta property="og:description" content="简单的数据科学相关概念">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://carabbeam.rip/images/og_image.png">
+<meta property="og:updated_time" content="2019-11-26T12:12:03.866Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="大数据相关基础概念">
+<meta name="twitter:description" content="简单的数据科学相关概念">
+<meta name="twitter:image" content="http://carabbeam.rip/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/favicon.png" alt="大数据相关基础概念" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="/">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catálogo" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-10-30T13:59:10.000Z">2019-10-30</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/专业/">专业</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    31 minutes read (About 4634 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                大数据相关基础概念
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p>简单的数据科学相关概念</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="1-数据仓库、数据湖、数据流的区别是什么"><a href="#1-数据仓库、数据湖、数据流的区别是什么" class="headerlink" title="1. 数据仓库、数据湖、数据流的区别是什么"></a>1. 数据仓库、数据湖、数据流的区别是什么</h3><p><strong>OLAP</strong> （online analytical processing，在线分析处理）</p>
+<p>数据仓库-〉数据湖-〉数据流 </p>
+<p>数据仓库是存储经过全面处理的结构化数据的 </p>
+<p>数据湖是存储结构化和非结构化的原始数据 </p>
+<p>数据流是比较新的概念 当前大部分处理都将数据作为流来处理 ，分为有限数据流和无限数据流，无限是有始无终的，有限是固定大小有始有终的。</p>
+<h4 id="1-那数仓如何分层"><a href="#1-那数仓如何分层" class="headerlink" title="1. 那数仓如何分层"></a>1. 那数仓如何分层</h4><p>源数据装载入数仓，进入数据缓冲区，经过抽取、清洗、转换刷新，进入基础数据层进行管理，然后在公共层汇总，进入OLAP服务器即数据集市，由前端工具和应用访问、分析和进行数据挖掘。</p>
+<p>原始数据层：从不同系统录入原始的结构化数据和非结构化数据</p>
+<p>数据集成产品（ 数据采集层）：对结构化数据进行数据抽取、清洗和转换，对非结构化数据进行内容分析</p>
+<p>数据存储层：企业级数据平台，服务不同的部门如财务效手生产人力等</p>
+<p>数据分析产品（数据展现层）：数据查询分析平台（固定报表、统计图表、多维分析、office应用、地图分析、电子报告等）</p>
+<p>应用展现门户（信息交付展）：数据仓库内容访问平台（展示图表、报表、灵活分析、个性化设置、日志统计）</p>
+<h4 id="2-DM和DW的区别是什么"><a href="#2-DM和DW的区别是什么" class="headerlink" title="2.DM和DW的区别是什么"></a>2.DM和DW的区别是什么</h4><p>数据集市和数据仓库</p>
+<p>数据集市以某个业务应用为出发点而建设的局部数仓，只关心自己需要的数据而不全盘考虑企业整体的数据架构和应用，每个应用有自己的数据集市。</p>
+<p>结构清晰、针对性强、扩展性好，因为仅对某一特定领域建立，容易维护修改。但建设任务繁重且更加消耗储存空间。</p>
+<p>数仓是决策用的数据集合，效率高质量好扩展性好且面向主题。其中的数据只允许增加不允许删改，主要提供查询服务。</p>
+<h4 id="3-数仓跟中台区别是什么-怎么演变过来的"><a href="#3-数仓跟中台区别是什么-怎么演变过来的" class="headerlink" title="3.数仓跟中台区别是什么 怎么演变过来的"></a>3.数仓跟中台区别是什么 怎么演变过来的</h4><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">数据中台</th>
+<th align="center">数据仓库</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">部署架构</td>
+<td align="center">水平扩展</td>
+<td align="center">大部分水平扩展</td>
+</tr>
+<tr>
+<td align="center">数据类型</td>
+<td align="center">文件存储，没有数据类型</td>
+<td align="center">丰富的数据类型</td>
+</tr>
+<tr>
+<td align="center">数据模型</td>
+<td align="center">非常简陋的数据模型</td>
+<td align="center">完善丰富的数据模型</td>
+</tr>
+<tr>
+<td align="center">数据关系</td>
+<td align="center">没有数据关系描述</td>
+<td align="center">数据关系完善</td>
+</tr>
+<tr>
+<td align="center">数据一致</td>
+<td align="center">无一致性</td>
+<td align="center">强一致性</td>
+</tr>
+<tr>
+<td align="center">数据安全</td>
+<td align="center">安全性很弱</td>
+<td align="center">安全性很高</td>
+</tr>
+<tr>
+<td align="center">计算类型</td>
+<td align="center">离线批量处理，只读，低并发</td>
+<td align="center">离线批量处理，只读，低并发</td>
+</tr>
+<tr>
+<td align="center">使用场景</td>
+<td align="center">低密度数据海量存储，数据预处理计算</td>
+<td align="center">高价值数据统一存储和计算平台</td>
+</tr>
+<tr>
+<td align="center">人员要求和成本</td>
+<td align="center">高</td>
+<td align="center">适中</td>
+</tr>
+</tbody></table>
+<p>传统的数据仓库不再能够满足数据分析的需求（从统计分析走向预测分析，从单领域走向多领域，从被动走向主动，从非实时走向实时分析，从结构化数据向多元化数据转变），且对统一平台有强烈诉求，也对数据中台的运算能力、核心算法、数据的全面性提出了更高的要求。</p>
+<p>数据中台的处理架构出现了变化。一是hadoop和spark等等分布式技术和组件为核心的数据处理架构能够支持批量和实时数据及灵活的业务需求，二是数据的与处理流程正在从ETL转向ELT。ETL是先从数据源抽取所需数据，然后数据清洗然后加载到数仓。ELT是根据上层应用的需求，随时从数据中台抽取想要的原始数据进行建模分析。</p>
+<h4 id="4-怎么给数仓做ETL"><a href="#4-怎么给数仓做ETL" class="headerlink" title="4.怎么给数仓做ETL"></a>4.怎么给数仓做ETL</h4><p>ETL是extract、translation和load三个单词的首字母，即抽取（从操作型数据源获取数据）、转换（转换数据，使之转变成为适用于查询和分析的形式和结构）、装载（将转换后的数据导入最终的目标数据仓库）</p>
+<p>工具：数据抽取（kafka；flume；sync）；数据清洗（hive/tez；pig/tez；storm；spark）；数据存储（hadoop；hbase；redis）；任务管理（azkaban；oozie）；数据同步（datax；sqoop）。</p>
+<p><strong>抽取</strong>：把ODS源数据抽取到DW中，然后处理成展示给相关人员查看的数据</p>
+<p>如果没有特殊要求可以一天一次，但是需要避开拉去日志的高峰期；对于有实时性要求的日志，可以一小时一次，或者直接使用kafka等相关工具收集，需要考虑到系统能否承受</p>
+<p>由于数据量较大，一般都是采用增量抽取，但是对于一些特殊场景的数据，比如订单数据，由于订单的状态会发生变化，并且订单的量级是可预知和相对较少的，就需要采用全量拉取的策略；对于源数据的保留，考虑到突发情况，服务器上的源数据至少要保证2天以上的时间</p>
+<p><strong>转换（清洗）</strong>：把不需要的和不符合规范的数据进行处理。数据清洗最好不要放在抽取的环节进行，考虑到有时可能会查原始数据</p>
+<p>a. 空值处理：根据业务需要，可以将空值替换为特定的值或者直接过滤掉；</p>
+<p>b. 验证数据正确性：主要是把不符合业务含义的数据做一处理，比如，把一个表示数量的字段中的字符串替换为0，把一个日期字段的非日期字符串过滤掉等等；</p>
+<p>c. 规范数据格式：比如，把所有的日期都格式化成yyyy-MM-dd HH:mm:ss的格式等；</p>
+<p>d. 数据转码：把一个源数据中用编码表示的字段，通过关联编码表，转换成代表其真实意义的值等等；</p>
+<p>e. 数据标准，统一：比如在源数据中表示男女的方式有很多种，在抽取的时候，直接根据模型中定义的值做转化，统一表示男女；</p>
+<p><strong>装载</strong>：数据拉取，清洗完之后，就需要展示了。一般是把清洗好的数据加载到mysql中，然后在各系统中使用，或者使用Tableau直接给相关人员展示</p>
+<h3 id="2-数据中台和业务中台的区别是什么，中台如何分层"><a href="#2-数据中台和业务中台的区别是什么，中台如何分层" class="headerlink" title="2. 数据中台和业务中台的区别是什么，中台如何分层"></a>2. 数据中台和业务中台的区别是什么，中台如何分层</h3><p><strong>数据中台</strong>成为热点，“中台”这个概念，是相对于前台和后台而生，是前台和后台的链接点，将业务共同的工具和技术予以沉淀。数据中台是指<strong>数据采集交换、共享融合、组织处理、建模分析、管理治理和服务应用于一体</strong>的<strong>综合性数据能力平台</strong>，在大数据生态中处于承上启下的功能，提供面向数据应用支撑的底座能力。广义上来给数据中台一个企业级的定义：“<strong>聚合和治理跨域数据，将数据抽象封装成服务，提供给前台以业务价值的逻辑概念</strong>”。</p>
+<p><strong>业务中台</strong>（企业核心金正能力的固化与赋能）：能力固化与赋能，固化通用能力，赋能前线部队，提升配置效率，加快前线响应，产品化业务化，开辟全新生态。</p>
+<p><strong>数据中台</strong>（企业核心数据资产的整合与共享）：资产整合与共享，整合多维数据，统一资产管理，连通数据孤岛，共享数据资源，深入挖掘数据，盘活资产价值。</p>
+<p>业务中台实现各个业务模块功能的复用 数据中台对各个业务的数据进行集中的采集计算等操作 业务中台的分层不太清楚 数据中台的分层大致有采集、计算、统一对外接口和对外应用。</p>
+<p>操作数据层，明细数据层，汇总数据层，应用数据层</p>
+<h4 id="1-业务和服务的区别是什么"><a href="#1-业务和服务的区别是什么" class="headerlink" title="1. 业务和服务的区别是什么"></a>1. 业务和服务的区别是什么</h4><p>业务更加中性</p>
+<h4 id="2-什么是微服务"><a href="#2-什么是微服务" class="headerlink" title="2. 什么是微服务"></a>2. 什么是微服务</h4><p><a href="http://c.biancheng.net/view/4615.html" target="_blank" rel="noopener">spring_boot教程</a></p>
+<h4 id="3-有的公司会做“技术中台”-这又是什么"><a href="#3-有的公司会做“技术中台”-这又是什么" class="headerlink" title="3. 有的公司会做“技术中台” 这又是什么"></a>3. 有的公司会做“技术中台” 这又是什么</h4><p>​    将技术能力与业务能力分离，以产品化的方式向前台提供技术赋能</p>
+<h4 id="4-中台上云的话-是IaaS（基础设施即服务）、PaaS（平台即服务）、DaaS-数据即服务-、还是SaaS（软件即服务）呢"><a href="#4-中台上云的话-是IaaS（基础设施即服务）、PaaS（平台即服务）、DaaS-数据即服务-、还是SaaS（软件即服务）呢" class="headerlink" title="4. 中台上云的话 是IaaS（基础设施即服务）、PaaS（平台即服务）、DaaS(数据即服务)、还是SaaS（软件即服务）呢"></a>4. 中台上云的话 是IaaS（基础设施即服务）、PaaS（平台即服务）、DaaS(数据即服务)、还是SaaS（软件即服务）呢</h4><p>IaaS只提供基础设施，PaaS相当于基础设施加操作系统，SaaS提供软件用户只需要操作数据，DaaS用户可以只做读写。</p>
+<h3 id="3-Kafka里Stateful-Stream-Processing怎么理解"><a href="#3-Kafka里Stateful-Stream-Processing怎么理解" class="headerlink" title="3. Kafka里Stateful Stream Processing怎么理解"></a>3. Kafka里Stateful Stream Processing怎么理解</h3><p>无界数据流的处理</p>
+<h3 id="4-如何用Flink设计一个实时训练系统"><a href="#4-如何用Flink设计一个实时训练系统" class="headerlink" title="4. 如何用Flink设计一个实时训练系统"></a>4. 如何用Flink设计一个实时训练系统</h3><h3 id="5-时序模型在深度学习领域有哪些模型-原理和应用场景是什么"><a href="#5-时序模型在深度学习领域有哪些模型-原理和应用场景是什么" class="headerlink" title="5. 时序模型在深度学习领域有哪些模型 原理和应用场景是什么"></a>5. 时序模型在深度学习领域有哪些模型 原理和应用场景是什么</h3><p>应用场景有时空分析 资源环境监测 地球空间认知  </p>
+<p>模型框架是依据单/多传感器节点和单/多维进行划分的</p>
+<p>问题类型主要有：1. 通过其他时间序列和维度作为驱动来预测目标序列；2. 通过多元历史序列来预测未来t时间内的目标序列，将其他时间序列及维度作为目标的数据特征，同时预测多个目标序列；3. 通过多元历史序列及序列间的依赖关系来训练函数，预测目标序列</p>
+<p>分析方法主要有：1.  <strong>仅根据历史时间序列的趋势发展预测未来时间序列的趋势发展</strong>，通过建立适当的数学模型拟合时间趋势曲线，根据建模预测未来时间序列的趋势曲线。常见模型包括<strong>平均自动回归模型</strong>。但是他们通常都不能对多个节点序列之间的关系进行建模，所以<strong>仅适合单节点单维度</strong>的。2. 为了提高预测的精度，<strong>非线性自动回归外生模型</strong>（NARX）或者<strong>机器学习算法</strong>被引入时序预测，此类方法根据具体的应用场景选取可能影响预测值的特征，引入模型，应用机器学习的回归模型进行预测。需要多个维度的数据建立模型较为复杂，预测精度高但<strong>仅针对特定的用用场景</strong>。且由于建模方式是预先定义的非线性形式，可能无法捕捉真正潜在的非线性关系。3. <strong>序列生成模型</strong>主要是针对序列上下文关系进行学习，<strong>不能直接对空间关系建模</strong>，对于隐式空间关系也可以通过维度拼接、解点表示学习的办法进行建模。所以序列生成模型主要用来做<strong>单元或多元时间序列预测分析</strong>，而且主要还是以<strong>多维时间序列预测分析</strong>为主。4. 基于传统机器学习的方法是先抽取时间统计特征和空间结构特征再输入模型中，基于序列生成模型的方法主要学习序列上下文关系，而对空间关系建模能力弱（不是没有，可以维度拼接），所以有必要提出同时学习时间和空间关系的预测模型。忽略各个节点之间的网络关系结构的动态性，主要考虑静态的关系结构即图结构，所以大部分的时空序列模型都是基于时间图快照的时序图模型，即每个时刻所有节点的关系都是固定的静态图，或者干脆只考虑其间接隐含的、科学系的关系。这需要通过模型直接学习空间关系而不是手动抽取结构特征，通常需要结合空间卷积或图结构的学习方法，比如卷积网络和图神经网络等。</p>
+<h3 id="6-海量实时物联网数据应该如何存储和管理-例如存在时空数据库中？时序数据库中？事件流？"><a href="#6-海量实时物联网数据应该如何存储和管理-例如存在时空数据库中？时序数据库中？事件流？" class="headerlink" title="6. 海量实时物联网数据应该如何存储和管理 例如存在时空数据库中？时序数据库中？事件流？"></a>6. 海量实时物联网数据应该如何存储和管理 例如存在时空数据库中？时序数据库中？事件流？</h3><h3 id="7-TOCC实时交通指挥平台怎么搭建-例如交通流模型怎么做-需要哪些数据和模型-系统架构如何设计"><a href="#7-TOCC实时交通指挥平台怎么搭建-例如交通流模型怎么做-需要哪些数据和模型-系统架构如何设计" class="headerlink" title="7. TOCC实时交通指挥平台怎么搭建 例如交通流模型怎么做 需要哪些数据和模型 系统架构如何设计"></a>7. TOCC实时交通指挥平台怎么搭建 例如交通流模型怎么做 需要哪些数据和模型 系统架构如何设计</h3><p>TOCC是交通综合运行协调与应急指挥系统 </p>
+<p>服务政府决策、服务行业监管、服务企业运营、服务公众出行（服务用户为政府部门、行业管理、企业单位和社会公众）</p>
+<p>四大应用系统：<strong>运行监测预警</strong>、<strong>应急协同指挥</strong>、<strong>辅助决策支持</strong>、<strong>公众出行服务</strong></p>
+<p>三大支撑系统：<strong>交通地理信息服务</strong>（基础地图服务、标志地标查找、地物添加）、<strong>统一身份认证平台</strong>（用户管理、身份认证、权限管理、单点登录）、<strong>统一视频监控服务</strong>（视频集成、视频功能整合、手机视频）</p>
+<p>一个中心：<strong>综合交通大数据中心</strong> 包括（云、交通流理论、交通网络模型、交通需求模型、多模式仿真引擎、时空分析引擎）涉及 数据采集-体量；数据解析-价值；数据清洗-速度；数据分析-多样性；数据应用-真实性。</p>
+<p>终端通过通信网络将数据传入</p>
+<p><img src="/.rip//%E5%9F%8E%E5%B8%82%E4%BA%A4%E9%80%9A.jpg" alt="城市交通"></p>
+<h3 id="8-深度学习的概念-可以突击一下-CNN-RNN-反向传播-常用的激活函数-NLP-计算机视觉-GAN-迁移学习-强化学习-联邦学习"><a href="#8-深度学习的概念-可以突击一下-CNN-RNN-反向传播-常用的激活函数-NLP-计算机视觉-GAN-迁移学习-强化学习-联邦学习" class="headerlink" title="8. 深度学习的概念  可以突击一下  CNN RNN 反向传播 常用的激活函数 NLP 计算机视觉 GAN 迁移学习  强化学习 联邦学习"></a>8. 深度学习的概念  可以突击一下  CNN RNN 反向传播 常用的激活函数 NLP 计算机视觉 GAN 迁移学习  强化学习 联邦学习</h3><h4 id="CNN-：卷积神经网络"><a href="#CNN-：卷积神经网络" class="headerlink" title="CNN ：卷积神经网络"></a>CNN ：卷积神经网络</h4><p>​    用传统的三层神经网络需要大量的参数，原因在于每个神经元都和相邻层的神经元相连接，但是思考一下，这种连接方式是必须的吗？可以用某种方式对一张图片的某个典型特征识别</p>
+<p>​    同一层的神经元可以共享卷积核，那么对于高位数据的处理将会变得非常简单。并且使用卷积核后图片的尺寸变小，方便后续计算，并且我们不需要手动去选取特征，只用设计好卷积核的尺寸，数量和滑动的步长就可以让它自己去训练了</p>
+<h4 id="RNN：循环神经网络"><a href="#RNN：循环神经网络" class="headerlink" title="RNN：循环神经网络"></a>RNN：循环神经网络</h4><p>​    BP算法和CNN算法仅考虑一个输入的影响而不考虑其他时刻输入的影响，对于与时间先后有关的预测就不能准确预测。</p>
+<p>​    RNN是一种特殊的神经网络结构，与DNN和CNN不同的是它不仅考虑前一时刻的输入，也赋予网络对前序内容的记忆。具体的表现形式为网络会对前面的信息进行记忆并应用于当前输出的计算中，即隐藏层之间的节点不再无连接而是有连接的，并且隐藏层的输入不仅包括输入层的输出还包括上一时刻隐藏层的输出。</p>
+<p>​    RNN的应用：自然语言处理，机器翻译，语音事别，图像描述生成，推荐</p>
+<h4 id="反向传播（BackPropagation）："><a href="#反向传播（BackPropagation）：" class="headerlink" title="反向传播（BackPropagation）："></a>反向传播（BackPropagation）：</h4><p>​    损失函数，使用平均绝对误差等数学工具表达出的输出结果和真实结果的偏差</p>
+<p>梯度下降</p>
+<h4 id="常用的激活函数"><a href="#常用的激活函数" class="headerlink" title="常用的激活函数"></a>常用的激活函数</h4><p>在多层神经网络中，上层节点的输出和下层节点的输入之间具有一个函数关系，这个函数称为激活函数 ，引入非线性函数作为激励函数，这样深层神经网络的表达能力就更加强大</p>
+<p>sigmod  tanh ReLU  ELU PReLU</p>
+<h4 id="NLP"><a href="#NLP" class="headerlink" title="NLP"></a>NLP</h4><p>​    神经语言程序学</p>
+<h4 id="计算机视觉"><a href="#计算机视觉" class="headerlink" title="计算机视觉"></a>计算机视觉</h4><p>​    从图像或者多维数据中获取信息</p>
+<h4 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h4><p>​    生成式对抗网络 一种复杂分布上无监督学习的深度学习模型，生成和判别互相博弈学习</p>
+<h4 id="迁移学习"><a href="#迁移学习" class="headerlink" title="迁移学习"></a>迁移学习</h4><p>把任务A开发的模型作为初始点，重新使用在任务B的开发模型的过程中</p>
+<h4 id="强化学习"><a href="#强化学习" class="headerlink" title="强化学习"></a>强化学习</h4><p>不要求预先给定任何数据，而是通过接收环境对动作的奖励（反馈）获得学习信息并更新模型参数</p>
+<h4 id="联邦学习"><a href="#联邦学习" class="headerlink" title="联邦学习"></a>联邦学习</h4><p>一个机器学习框架，能有效帮助多个机构进行数据使用和机器学习建模</p>
+<h3 id="9-大数据那块-谷歌的三驾马车"><a href="#9-大数据那块-谷歌的三驾马车" class="headerlink" title="9. 大数据那块 谷歌的三驾马车"></a>9. 大数据那块 谷歌的三驾马车</h3><p>google的三驾马车：GFS（可扩展的大型数据密集型应用的分布式文件系统）、MapReduce（超大集群的简单数据处理）、Bigtable（结构化数据的分布式存储系统）</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/笔记/">笔记</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/11/05/吴恩达机器学习笔记/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">吴恩达机器学习笔记</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/10/11/重庆/">
+                <span class="level-item">重庆！重庆！</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comentarios</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'jsQbW7L09koJK6ws2GwsupIQ-gzGzoHsz',
+        app_key: '50daikb1zgV80YjFJNKcq1S6',
+        placeholder: 'Say something...'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                        <figure class="image is-128x128 has-mb-6">
+                            <img class="is-rounded" src="/images/avatar2.JPG" alt="carabbeam">
+                        </figure>
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        carabbeam
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        ZIMZALABIM
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>nanjing</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Entradas
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        30
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categorias
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        5
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Etiquetas
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        12
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/carabbeam" target="_blank">
+                SEGUIR</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/carabbeam">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Facebook" href="https://facebook.com">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="https://twitter.com">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Dribbble" href="https://weibo.com/1832094835/profile?topnav=1&amp;wvr=6">
+                
+                <i class="fab fa-dribbble"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catálogo
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#1-数据仓库、数据湖、数据流的区别是什么">
+        <span class="has-mr-6">1</span>
+        <span>1. 数据仓库、数据湖、数据流的区别是什么</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#1-那数仓如何分层">
+        <span class="has-mr-6">1.1</span>
+        <span>1. 那数仓如何分层</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-DM和DW的区别是什么">
+        <span class="has-mr-6">1.2</span>
+        <span>2.DM和DW的区别是什么</span>
+        </a></li><li>
+        <a class="is-flex" href="#3-数仓跟中台区别是什么-怎么演变过来的">
+        <span class="has-mr-6">1.3</span>
+        <span>3.数仓跟中台区别是什么 怎么演变过来的</span>
+        </a></li><li>
+        <a class="is-flex" href="#4-怎么给数仓做ETL">
+        <span class="has-mr-6">1.4</span>
+        <span>4.怎么给数仓做ETL</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#2-数据中台和业务中台的区别是什么，中台如何分层">
+        <span class="has-mr-6">2</span>
+        <span>2. 数据中台和业务中台的区别是什么，中台如何分层</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#1-业务和服务的区别是什么">
+        <span class="has-mr-6">2.1</span>
+        <span>1. 业务和服务的区别是什么</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-什么是微服务">
+        <span class="has-mr-6">2.2</span>
+        <span>2. 什么是微服务</span>
+        </a></li><li>
+        <a class="is-flex" href="#3-有的公司会做“技术中台”-这又是什么">
+        <span class="has-mr-6">2.3</span>
+        <span>3. 有的公司会做“技术中台” 这又是什么</span>
+        </a></li><li>
+        <a class="is-flex" href="#4-中台上云的话-是IaaS（基础设施即服务）、PaaS（平台即服务）、DaaS-数据即服务-、还是SaaS（软件即服务）呢">
+        <span class="has-mr-6">2.4</span>
+        <span>4. 中台上云的话 是IaaS（基础设施即服务）、PaaS（平台即服务）、DaaS(数据即服务)、还是SaaS（软件即服务）呢</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#3-Kafka里Stateful-Stream-Processing怎么理解">
+        <span class="has-mr-6">3</span>
+        <span>3. Kafka里Stateful Stream Processing怎么理解</span>
+        </a></li><li>
+        <a class="is-flex" href="#4-如何用Flink设计一个实时训练系统">
+        <span class="has-mr-6">4</span>
+        <span>4. 如何用Flink设计一个实时训练系统</span>
+        </a></li><li>
+        <a class="is-flex" href="#5-时序模型在深度学习领域有哪些模型-原理和应用场景是什么">
+        <span class="has-mr-6">5</span>
+        <span>5. 时序模型在深度学习领域有哪些模型 原理和应用场景是什么</span>
+        </a></li><li>
+        <a class="is-flex" href="#6-海量实时物联网数据应该如何存储和管理-例如存在时空数据库中？时序数据库中？事件流？">
+        <span class="has-mr-6">6</span>
+        <span>6. 海量实时物联网数据应该如何存储和管理 例如存在时空数据库中？时序数据库中？事件流？</span>
+        </a></li><li>
+        <a class="is-flex" href="#7-TOCC实时交通指挥平台怎么搭建-例如交通流模型怎么做-需要哪些数据和模型-系统架构如何设计">
+        <span class="has-mr-6">7</span>
+        <span>7. TOCC实时交通指挥平台怎么搭建 例如交通流模型怎么做 需要哪些数据和模型 系统架构如何设计</span>
+        </a></li><li>
+        <a class="is-flex" href="#8-深度学习的概念-可以突击一下-CNN-RNN-反向传播-常用的激活函数-NLP-计算机视觉-GAN-迁移学习-强化学习-联邦学习">
+        <span class="has-mr-6">8</span>
+        <span>8. 深度学习的概念  可以突击一下  CNN RNN 反向传播 常用的激活函数 NLP 计算机视觉 GAN 迁移学习  强化学习 联邦学习</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#CNN-：卷积神经网络">
+        <span class="has-mr-6">8.1</span>
+        <span>CNN ：卷积神经网络</span>
+        </a></li><li>
+        <a class="is-flex" href="#RNN：循环神经网络">
+        <span class="has-mr-6">8.2</span>
+        <span>RNN：循环神经网络</span>
+        </a></li><li>
+        <a class="is-flex" href="#反向传播（BackPropagation）：">
+        <span class="has-mr-6">8.3</span>
+        <span>反向传播（BackPropagation）：</span>
+        </a></li><li>
+        <a class="is-flex" href="#常用的激活函数">
+        <span class="has-mr-6">8.4</span>
+        <span>常用的激活函数</span>
+        </a></li><li>
+        <a class="is-flex" href="#NLP">
+        <span class="has-mr-6">8.5</span>
+        <span>NLP</span>
+        </a></li><li>
+        <a class="is-flex" href="#计算机视觉">
+        <span class="has-mr-6">8.6</span>
+        <span>计算机视觉</span>
+        </a></li><li>
+        <a class="is-flex" href="#GAN">
+        <span class="has-mr-6">8.7</span>
+        <span>GAN</span>
+        </a></li><li>
+        <a class="is-flex" href="#迁移学习">
+        <span class="has-mr-6">8.8</span>
+        <span>迁移学习</span>
+        </a></li><li>
+        <a class="is-flex" href="#强化学习">
+        <span class="has-mr-6">8.9</span>
+        <span>强化学习</span>
+        </a></li><li>
+        <a class="is-flex" href="#联邦学习">
+        <span class="has-mr-6">8.10</span>
+        <span>联邦学习</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#9-大数据那块-谷歌的三驾马车">
+        <span class="has-mr-6">9</span>
+        <span>9. 大数据那块 谷歌的三驾马车</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="http://mrx.moe/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">救苦救难良观音</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">mrx.moe</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://yaxiang.bitcron.com/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">兴观群怨（？）湘姐姐</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">yaxiang.bitcron.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://baiyun.bitcron.com/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">神奇贝壳宝老师</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">baiyun.bitcron.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="http://kharybdism.bitcron.com/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">只想摸鱼慕咕咕</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">kharybdism.bitcron.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://septir.me/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">最可爱的暗水獭</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">septir.me</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categorias
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/专业/">
+            <span class="level-start">
+                <span class="level-item">专业</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">11</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/同人/">
+            <span class="level-start">
+                <span class="level-item">同人</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/生活/">
+            <span class="level-start">
+                <span class="level-item">生活</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/翻译/">
+            <span class="level-start">
+                <span class="level-item">翻译</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/随笔/">
+            <span class="level-start">
+                <span class="level-item">随笔</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Nube de etiquetas
+        </h3>
+        <a href="/tags/FGO/" style="font-size: 10px;">FGO</a> <a href="/tags/cp日记/" style="font-size: 10px;">cp日记</a> <a href="/tags/psycho-pass/" style="font-size: 10px;">psycho pass</a> <a href="/tags/刀剑乱舞-歌仙乙女/" style="font-size: 10px;">刀剑乱舞; 歌仙乙女</a> <a href="/tags/少女歌剧-恋光/" style="font-size: 10px;">少女歌剧; 恋光</a> <a href="/tags/日记/" style="font-size: 16.67px;">日记</a> <a href="/tags/杂谈/" style="font-size: 13.33px;">杂谈</a> <a href="/tags/笔记/" style="font-size: 20px;">笔记</a> <a href="/tags/考据/" style="font-size: 10px;">考据</a> <a href="/tags/英耽/" style="font-size: 10px;">英耽</a> <a href="/tags/茸米/" style="font-size: 10px;">茸米</a> <a href="/tags/赤红灯火妖魅行-黑由/" style="font-size: 10px;">赤红灯火妖魅行, 黑由</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recientes
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2022/04/11/hello-world/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-04-11T15:58:52.484Z">2022-04-11</time></div>
+                    <a href="/2022/04/11/hello-world/" class="has-link-black-ter is-size-6">Hello World</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/08/22/南方/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="南方">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-22T07:19:16.000Z">2020-08-22</time></div>
+                    <a href="/2020/08/22/南方/" class="has-link-black-ter is-size-6">南方</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/同人/">同人</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/08/01/Sybil-Travilla/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Sybil Seely">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-01T07:57:44.000Z">2020-08-01</time></div>
+                    <a href="/2020/08/01/Sybil-Travilla/" class="has-link-black-ter is-size-6">Sybil Seely</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/翻译/">翻译</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/07/06/cpp认证/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="CPP作者认证">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-07-06T14:40:59.000Z">2020-07-06</time></div>
+                    <a href="/2020/07/06/cpp认证/" class="has-link-black-ter is-size-6">CPP作者认证</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/同人/">同人</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/07/05/端午流水账/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="端午流水账！">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-07-05T05:56:10.000Z">2020-07-05</time></div>
+                    <a href="/2020/07/05/端午流水账/" class="has-link-black-ter is-size-6">端午流水账！</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/生活/">生活</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archivos
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">10</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2015/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2015</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Etiquetas
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/FGO/">
+                        <span class="tag">FGO</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/cp日记/">
+                        <span class="tag">cp日记</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/psycho-pass/">
+                        <span class="tag">psycho pass</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/刀剑乱舞-歌仙乙女/">
+                        <span class="tag">刀剑乱舞; 歌仙乙女</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/少女歌剧-恋光/">
+                        <span class="tag">少女歌剧; 恋光</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/日记/">
+                        <span class="tag">日记</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/杂谈/">
+                        <span class="tag">杂谈</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/笔记/">
+                        <span class="tag">笔记</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/考据/">
+                        <span class="tag">考据</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/英耽/">
+                        <span class="tag">英耽</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/茸米/">
+                        <span class="tag">茸米</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/赤红灯火妖魅行-黑由/">
+                        <span class="tag">赤红灯火妖魅行, 黑由</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recientes
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2022/04/11/hello-world/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-04-11T15:58:52.484Z">2022-04-11</time></div>
+                    <a href="/2022/04/11/hello-world/" class="has-link-black-ter is-size-6">Hello World</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/08/22/南方/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="南方">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-22T07:19:16.000Z">2020-08-22</time></div>
+                    <a href="/2020/08/22/南方/" class="has-link-black-ter is-size-6">南方</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/同人/">同人</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/08/01/Sybil-Travilla/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Sybil Seely">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-01T07:57:44.000Z">2020-08-01</time></div>
+                    <a href="/2020/08/01/Sybil-Travilla/" class="has-link-black-ter is-size-6">Sybil Seely</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/翻译/">翻译</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/07/06/cpp认证/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="CPP作者认证">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-07-06T14:40:59.000Z">2020-07-06</time></div>
+                    <a href="/2020/07/06/cpp认证/" class="has-link-black-ter is-size-6">CPP作者认证</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/同人/">同人</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/07/05/端午流水账/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="端午流水账！">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-07-05T05:56:10.000Z">2020-07-05</time></div>
+                    <a href="/2020/07/05/端午流水账/" class="has-link-black-ter is-size-6">端午流水账！</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/生活/">生活</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archivos
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">10</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2015/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2015</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Etiquetas
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/FGO/">
+                        <span class="tag">FGO</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/cp日记/">
+                        <span class="tag">cp日记</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/psycho-pass/">
+                        <span class="tag">psycho pass</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/刀剑乱舞-歌仙乙女/">
+                        <span class="tag">刀剑乱舞; 歌仙乙女</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/少女歌剧-恋光/">
+                        <span class="tag">少女歌剧; 恋光</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/日记/">
+                        <span class="tag">日记</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/杂谈/">
+                        <span class="tag">杂谈</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/笔记/">
+                        <span class="tag">笔记</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/考据/">
+                        <span class="tag">考据</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/英耽/">
+                        <span class="tag">英耽</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/茸米/">
+                        <span class="tag">茸米</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/赤红灯火妖魅行-黑由/">
+                        <span class="tag">赤红灯火妖魅行, 黑由</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/favicon.png" alt="大数据相关基础概念" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2022 carabbeam&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="GitHub" href="https://github.com/carabbeam">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Entradas',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categorias',
+                TAGS: 'Etiquetas',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

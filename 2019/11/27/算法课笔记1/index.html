@@ -1,0 +1,1859 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+<title>算法课笔记1 - ZIMZALABIM</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="一篇平平无奇的课堂笔记 内容长且无规则">
+<meta name="keywords" content="笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法课笔记1">
+<meta property="og:url" content="http://carabbeam.rip/2019/11/27/算法课笔记1/index.html">
+<meta property="og:site_name" content="ZIMZALABIM">
+<meta property="og:description" content="一篇平平无奇的课堂笔记 内容长且无规则">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://carabbeam.rip/images/og_image.png">
+<meta property="og:updated_time" content="2020-08-01T07:44:07.696Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法课笔记1">
+<meta name="twitter:description" content="一篇平平无奇的课堂笔记 内容长且无规则">
+<meta name="twitter:image" content="http://carabbeam.rip/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/favicon.png" alt="算法课笔记1" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="/">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catálogo" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-11-27T04:11:45.000Z">2019-11-27</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    20 minutes read (About 3000 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                算法课笔记1
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p>一篇平平无奇的课堂笔记 内容长且无规则</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="普适思想"><a href="#普适思想" class="headerlink" title="普适思想"></a>普适思想</h3><ol>
+<li>coding style</li>
+<li>考虑全面各种情况（第一步永远是边界检测）</li>
+<li>bug free</li>
+<li>交流-思考-渐进的过程</li>
+</ol>
+<h4 id="例题：strstr"><a href="#例题：strstr" class="headerlink" title="例题：strstr"></a>例题：strstr</h4><p>重点：不要总想着kmp算法，因为它仅仅只是一个算法</p>
+<p>第一步库函数(int pos = haystack.find(needle);)</p>
+<p>第二步暴力解法 (for循环嵌套)</p>
+<p>第三步优化</p>
+<h3 id="递归recursion的思想"><a href="#递归recursion的思想" class="headerlink" title="递归recursion的思想"></a>递归recursion的思想</h3><p>重点：使用深度优先搜索DFS实现递归==使用回溯的思想。</p>
+<h4 id="递归的三个要素："><a href="#递归的三个要素：" class="headerlink" title="递归的三个要素："></a>递归的三个要素：</h4><p>第一步：定义要用递归完成的事情</p>
+<p>第二步： 如何将问题变为子问题</p>
+<p>第三步： 什么时候退出递归（什么时候给返回值）</p>
+<p>使用深度优先搜索的情境or<strong>排列组合模板总结</strong>：</p>
+<ul>
+<li>适用范围：几乎所有的搜索问题</li>
+<li>需要做出的改动：1. 什么时候输出；2. 哪些情况需要跳过</li>
+<li>试着举例：<ul>
+<li>permutations/unique permutations</li>
+<li>combination sum/letter combination of a phone number</li>
+<li>palindrome partitioning</li>
+<li>restore ip address</li>
+</ul>
+</li>
+</ul>
+<h4 id="例题：subsets"><a href="#例题：subsets" class="headerlink" title="例题：subsets"></a>例题：subsets</h4><p>两种解法需要掌握：</p>
+<ol>
+<li><p>递归实现DFS</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">helper</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &gt;&amp; res, </span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-params">            <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; tmp, </span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-params">            <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums, </span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-params">            <span class="hljs-keyword">int</span> level)</span> </span>&#123;</span><br><span class="line">	<span class="hljs-keyword">if</span> (level &gt;= nums.size()) &#123;</span><br><span class="line">		res.push_back(tmp);</span><br><span class="line">		<span class="hljs-keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	tmp.push_back(nums[level]);</span><br><span class="line">	helper(res, tmp, nums, level + <span class="hljs-number">1</span>);</span><br><span class="line">	tmp.pop_back();</span><br><span class="line">	helper(res, tmp, nums, level + <span class="hljs-number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; <span class="hljs-title">subsets</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">	<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &gt; res;</span><br><span class="line">	<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; tmp;</span><br><span class="line">	helper(res, tmp, nums, <span class="hljs-number">0</span>);</span><br><span class="line">	<span class="hljs-keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>考虑层序遍历求解，每次加入一个元素就扩充res的长度，直到所有元素添加完毕</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span></span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; <span class="hljs-title">subsets</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &gt; <span class="hljs-title">res</span><span class="hljs-params">(<span class="hljs-number">1</span>)</span></span>;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;nums.size();i++)&#123;</span><br><span class="line">            <span class="hljs-keyword">int</span> cnt=res.size();</span><br><span class="line">            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;cnt;j++)&#123;</span><br><span class="line">                <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; tmp=res[j];</span><br><span class="line">                tmp.push_back(nums[i]);</span><br><span class="line">                res.push_back(tmp);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>二进制位运算解法</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span></span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">    <span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&gt; <span class="hljs-title">subsets</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> S = nums.size();</span><br><span class="line">        <span class="hljs-keyword">int</span> N = <span class="hljs-number">1</span> &lt;&lt; S;</span><br><span class="line">        <span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; &gt; res;</span><br><span class="line">        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">            <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; v;</span><br><span class="line">            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; S; ++j)</span><br><span class="line">                <span class="hljs-keyword">if</span> (i &amp; (<span class="hljs-number">1</span> &lt;&lt; j))</span><br><span class="line">                    v.push_back(nums[j]);</span><br><span class="line">            res.push_back(v);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="基础算法问题的-Time-Complexity"><a href="#基础算法问题的-Time-Complexity" class="headerlink" title="基础算法问题的 Time Complexity"></a>基础算法问题的 Time Complexity</h3><p>O(1) 极少</p>
+<p>O(logn) 几乎都是二分法</p>
+<p>O(n) 遍历 </p>
+<p>O(nlogn) 一般都需要排序</p>
+<p>O(n²) 数组、枚举、动态规划</p>
+<p>O(n^3)数组、枚举、动态规划</p>
+<p>O(2^n) 与组合有关的搜索</p>
+<p>O(n!) 与排列有关的搜索</p>
+<h3 id="二分法binary-search的思想"><a href="#二分法binary-search的思想" class="headerlink" title="二分法binary search的思想"></a>二分法binary search的思想</h3><p><strong>二分法中的循环仅仅是为了缩小范围，而不是获得结果</strong>，二分法的核心就是将答案的范围缩小。</p>
+<p>** 比O(n)更优的时间复杂度几乎只能是O(logn)的二分法**。</p>
+<p>T(n) = T(n/2) + O(1) = O(logn)</p>
+<p>通过O(1)的时间把规模为n的问题变为n/2=O(logn)</p>
+<p>通过O(n)的时间把规模为n的问题变为n/2=O(n)</p>
+<h4 id="recursion-or-Loop？"><a href="#recursion-or-Loop？" class="headerlink" title="recursion or Loop？"></a>recursion or Loop？</h4><p>一般使用loop，因为recursion涉及到了调用栈，占用内存较大，所以recursion不是常用解决办法。但如果recursion会更简单，可以先用recursion解决。</p>
+<h4 id="通用的二分法模板："><a href="#通用的二分法模板：" class="headerlink" title="通用的二分法模板："></a>通用的二分法模板：</h4><ol>
+<li>while (start + 1 &lt; end)<ul>
+<li>不用start &lt; end 或 start &lt;= end 或start + 1 &lt;= end 是为了防止死循环，确保在只剩最后两个数时就开始做判断</li>
+</ul>
+</li>
+<li>int mid = start + (end - start)/2<ul>
+<li>不用(start + end)/2是为了防止溢出，因为int型最大只有2^32-1</li>
+</ul>
+</li>
+<li>A[mid] == , &lt; , &gt;<ul>
+<li>不管是否可以&lt;=或&gt;=，都先判断三种情况，以确保条件判断正确。</li>
+</ul>
+</li>
+<li>A[start] , A[end] ? target<ul>
+<li>first-pos-of-target时先判断start；last-pos时先判断end</li>
+</ul>
+</li>
+<li>start = mid <ul>
+<li>不使用mid + 1是为了防止死循环（极端情况只有两个数时）</li>
+</ul>
+</li>
+<li>end = mid</li>
+</ol>
+<h4 id="例题：binary-search"><a href="#例题：binary-search" class="headerlink" title="例题：binary-search"></a>例题：binary-search</h4><p>/first-or-last-pos-of-target</p>
+<p>/search-a-2d-matrix</p>
+<p>/search-insert-pos</p>
+<p>/search-in-a-infinite-sorted-array</p>
+<p>/search-a-rotated-sorted-array</p>
+<p>/Find-peak-element</p>
+<h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>T(n) = 2T(n/2) + O(1) = O(n)</p>
+<p>T(n) = 2T(n/2) + O(n) = O(nlogn)</p>
+<h4 id="前中后序遍历"><a href="#前中后序遍历" class="headerlink" title="前中后序遍历"></a>前中后序遍历</h4><ol>
+<li><p>递归方法</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BiTNode</span>&#123;</span></span><br><span class="line">    TElemType data;<span class="hljs-comment">//数据</span></span><br><span class="line">    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BiTNode</span> *<span class="hljs-title">lchild</span>, *<span class="hljs-title">rchild</span>;</span><span class="hljs-comment">//左右孩子指针</span></span><br><span class="line">&#125; BiTNode, *BiTree;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/*二叉树的前序遍历递归算法*/</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">PreOrderTraverse</span><span class="hljs-params">(BiTree T)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(T==<span class="hljs-literal">NULL</span>)</span><br><span class="line">    <span class="hljs-keyword">return</span>;</span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%c"</span>, T-&gt;data);  <span class="hljs-comment">/*显示结点数据，可以更改为其他对结点操作*/</span></span><br><span class="line">    PreOrderTraverse(T-&gt;lchild);    <span class="hljs-comment">/*再先序遍历左子树*/</span></span><br><span class="line">    PreOrderTraverse(T-&gt;rchild);    <span class="hljs-comment">/*最后先序遍历右子树*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/*二叉树的中序遍历递归算法*/</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">InOrderTraverse</span><span class="hljs-params">(BiTree T)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(T==<span class="hljs-literal">NULL</span>)</span><br><span class="line">    <span class="hljs-keyword">return</span>;</span><br><span class="line">    InOrderTraverse(T-&gt;lchild); <span class="hljs-comment">/*中序遍历左子树*/</span></span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%c"</span>, T-&gt;data);  <span class="hljs-comment">/*显示结点数据，可以更改为其他对结点操作*/</span></span><br><span class="line">    InOrderTraverse(T-&gt;rchild); <span class="hljs-comment">/*最后中序遍历右子树*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">/*二叉树的后序遍历递归算法*/</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">PostOrderTraverse</span><span class="hljs-params">(BiTree T)</span></span></span><br><span class="line"><span class="hljs-function"></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(T==<span class="hljs-literal">NULL</span>)</span><br><span class="line">    <span class="hljs-keyword">return</span>;</span><br><span class="line">    PostOrderTraverse(T-&gt;lchild);   <span class="hljs-comment">/*先后序遍历左子树*/</span></span><br><span class="line">    PostOrderTraverse(T-&gt;rchild);   <span class="hljs-comment">/*再后续遍历右子树*/</span></span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%c"</span>, T-&gt;data);  <span class="hljs-comment">/*显示结点数据，可以更改为其他对结点操作*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>非递归方法-利用栈进行遍历</p>
+<h5 id="前序"><a href="#前序" class="headerlink" title="前序"></a>前序</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">栈S;</span><br><span class="line">p= root;</span><br><span class="line">while(p || S不空)&#123;</span><br><span class="line">    while(p)&#123;</span><br><span class="line">        访问p节点；</span><br><span class="line">        p的右子树入S;</span><br><span class="line">        p = p的左子树;</span><br><span class="line">    &#125;</span><br><span class="line">    p = S栈顶弹出;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">preorderTraversal</span><span class="hljs-params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">stack</span>&lt;TreeNode*&gt; S;</span><br><span class="line">    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; v;</span><br><span class="line">    TreeNode* rt = root;</span><br><span class="line">    <span class="hljs-keyword">while</span>(rt || S.size())&#123;</span><br><span class="line">        <span class="hljs-keyword">while</span>(rt)&#123;</span><br><span class="line">            S.push(rt-&gt;right);</span><br><span class="line">            v.push_back(rt-&gt;val);</span><br><span class="line">            rt=rt-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line">        rt=S.top();S.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> v;        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="后序"><a href="#后序" class="headerlink" title="后序"></a>后序</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">栈S;</span><br><span class="line">p= root;</span><br><span class="line">while(p || S不空)&#123;</span><br><span class="line"> while(p)&#123;</span><br><span class="line"> 		访问p节点；</span><br><span class="line">		p的左子树入S;</span><br><span class="line"> 		p = p的右子树;</span><br><span class="line"> 	&#125;</span><br><span class="line"> 	p = S栈顶弹出;</span><br><span class="line">&#125;</span><br><span class="line">结果序列逆序;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">postorderTraversal</span><span class="hljs-params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">stack</span>&lt;TreeNode*&gt; S;</span><br><span class="line">    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; v;</span><br><span class="line">    TreeNode* rt = root;</span><br><span class="line">    <span class="hljs-keyword">while</span>(rt || S.size())&#123;</span><br><span class="line">        <span class="hljs-keyword">while</span>(rt)&#123;</span><br><span class="line">            S.push(rt-&gt;left);</span><br><span class="line">            v.push_back(rt-&gt;val);</span><br><span class="line">            rt=rt-&gt;right;</span><br><span class="line">        &#125;</span><br><span class="line">        rt=S.top();S.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    reverse(v.begin(),v.end());</span><br><span class="line">    <span class="hljs-keyword">return</span> v;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="中序"><a href="#中序" class="headerlink" title="中序"></a>中序</h5><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">栈S;</span><br><span class="line">p= root;</span><br><span class="line">while(p || S不空)&#123;</span><br><span class="line">    while(p)&#123;</span><br><span class="line">        p入S;</span><br><span class="line">	    p = p的左子树;</span><br><span class="line">	&#125;</span><br><span class="line">	p = S.top 出栈;</span><br><span class="line">    访问p;</span><br><span class="line">    p = p的右子树;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">inorderTraversal</span><span class="hljs-params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">    <span class="hljs-built_in">stack</span>&lt;TreeNode*&gt; S;</span><br><span class="line">    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; v;</span><br><span class="line">    TreeNode* rt = root;</span><br><span class="line">    <span class="hljs-keyword">while</span>(rt || S.size())&#123;</span><br><span class="line">        <span class="hljs-keyword">while</span>(rt)&#123;</span><br><span class="line">            S.push(rt);</span><br><span class="line">            rt=rt-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line">        rt=S.top();S.pop();</span><br><span class="line">        v.push_back(rt-&gt;val);</span><br><span class="line">        rt=rt-&gt;right;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> v;        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="层次遍历（BFS-Queue）"><a href="#层次遍历（BFS-Queue）" class="headerlink" title="层次遍历（BFS-Queue）"></a>层次遍历（BFS-Queue）</h4><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>&#123;</span>						<span class="hljs-comment">//定义二叉链</span></span><br><span class="line">	<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">lchild</span>;</span>					<span class="hljs-comment">//指向左孩子节点</span></span><br><span class="line">	<span class="hljs-keyword">char</span> data;								<span class="hljs-comment">//数据元素</span></span><br><span class="line">	<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">rchild</span>;</span>					<span class="hljs-comment">//指向右孩子节点 </span></span><br><span class="line">&#125;BTNode;									<span class="hljs-comment">//struct Node 的别名						 </span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Quene</span>&#123;</span>						<span class="hljs-comment">//定义顺序队 </span></span><br><span class="line">	<span class="hljs-keyword">int</span> front;								<span class="hljs-comment">//队头指针 </span></span><br><span class="line">	BTNode *data[MaxSize];					<span class="hljs-comment">//存放队中元素 </span></span><br><span class="line">	<span class="hljs-keyword">int</span> rear;								<span class="hljs-comment">//队尾指针 </span></span><br><span class="line">&#125;SqQueue; 									<span class="hljs-comment">//struct Queue 的别名 </span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//初始化队列 </span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">initQueue</span><span class="hljs-params">(SqQueue * &amp;q)</span></span>&#123;</span><br><span class="line">	q=(SqQueue *)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(SqQueue));	<span class="hljs-comment">//分配一个空间 </span></span><br><span class="line">	q-&gt;front=q-&gt;rear=<span class="hljs-number">-1</span>;					<span class="hljs-comment">//置 -1 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//判断队列是否为空</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">emptyQueue</span><span class="hljs-params">(SqQueue * &amp;q)</span></span>&#123;</span><br><span class="line">	<span class="hljs-keyword">if</span>(q-&gt;front==q-&gt;rear)&#123;					<span class="hljs-comment">//首指针和尾指针相等，说明为空 </span></span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;						<span class="hljs-comment">//返回真 </span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="hljs-keyword">else</span>&#123;</span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;						<span class="hljs-comment">//返回假 </span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//进队列</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">enQueue</span><span class="hljs-params">(SqQueue * &amp;q,BTNode * &amp;BT)</span></span>&#123;</span><br><span class="line">	<span class="hljs-keyword">if</span>(q-&gt;rear==MaxSize<span class="hljs-number">-1</span>)&#123;					<span class="hljs-comment">//判断队列是否满了 </span></span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;						<span class="hljs-comment">//返回假 </span></span><br><span class="line">	&#125;</span><br><span class="line">	q-&gt;rear++;								<span class="hljs-comment">//头指针加 1 </span></span><br><span class="line">	q-&gt;data[q-&gt;rear]=BT;					<span class="hljs-comment">//传值 </span></span><br><span class="line">	<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;							<span class="hljs-comment">//返回真 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//出队列 </span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">deQueue</span><span class="hljs-params">(SqQueue * &amp;q,BTNode * &amp;BT)</span></span>&#123;</span><br><span class="line">	<span class="hljs-keyword">if</span>(q-&gt;front==q-&gt;rear)&#123;					<span class="hljs-comment">//判断是否空了 </span></span><br><span class="line">		<span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;						<span class="hljs-comment">//返回假 </span></span><br><span class="line">	&#125;</span><br><span class="line">	q-&gt;front++;								<span class="hljs-comment">//尾指针加 1 </span></span><br><span class="line">	BT=q-&gt;data[q-&gt;front];					<span class="hljs-comment">//取值 </span></span><br><span class="line">	<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;							<span class="hljs-comment">//返回真 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">levelOrder</span><span class="hljs-params">(BTNode * &amp;BT)</span></span>&#123;</span><br><span class="line">	SqQueue *q;									<span class="hljs-comment">//定义队列 </span></span><br><span class="line">	initQueue(q);								<span class="hljs-comment">//初始化队列 </span></span><br><span class="line">	<span class="hljs-keyword">if</span>(BT!=<span class="hljs-literal">NULL</span>)&#123;</span><br><span class="line">		enQueue(q,BT);							<span class="hljs-comment">//根节点指针进队列 </span></span><br><span class="line">	&#125; </span><br><span class="line">	<span class="hljs-keyword">while</span>(emptyQueue(q)!=<span class="hljs-literal">true</span>)&#123;					<span class="hljs-comment">//队不为空循环 </span></span><br><span class="line">		deQueue(q,BT);							<span class="hljs-comment">//出队时的节点 </span></span><br><span class="line">		<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%c"</span>,BT-&gt;data);					<span class="hljs-comment">//输出节点存储的值 </span></span><br><span class="line">		<span class="hljs-keyword">if</span>(BT-&gt;lchild!=<span class="hljs-literal">NULL</span>)&#123;					<span class="hljs-comment">//有左孩子时将该节点进队列 </span></span><br><span class="line">			enQueue(q,BT-&gt;lchild);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="hljs-keyword">if</span>(BT-&gt;rchild!=<span class="hljs-literal">NULL</span>)&#123;					<span class="hljs-comment">//有右孩子时将该节点进队列 </span></span><br><span class="line">			enQueue(q,BT-&gt;rchild);</span><br><span class="line">		&#125;										<span class="hljs-comment">//一层一层的把节点存入队列 </span></span><br><span class="line">	&#125; 											<span class="hljs-comment">//当没有孩子节点时就不再循环 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="maxlength-minlength-of-B-tree-Traverse-or-Divide-Conquer"><a href="#maxlength-minlength-of-B-tree-Traverse-or-Divide-Conquer" class="headerlink" title="maxlength/minlength of B-tree : Traverse or Divide-Conquer"></a>maxlength/minlength of B-tree : Traverse or Divide-Conquer</h4><ul>
+<li><p>分治的方法优于遍历的方法</p>
+<p>这是因为分治不会一直传结果，而遍历会把结果当成参数传下去，造成冗余。</p>
+<img src="/.rip//层次关系.jpg" style="zoom: 33%;">
+
+</li>
+</ul>
+<h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><h3 id="链表-linked-list"><a href="#链表-linked-list" class="headerlink" title="链表 linked-list"></a>链表 linked-list</h3><p>声明：</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">CacheNode</span> &#123;</span></span><br><span class="line">    <span class="hljs-keyword">int</span> key;</span><br><span class="line">    <span class="hljs-keyword">int</span> value;</span><br><span class="line">    CacheNode *pre, *next;</span><br><span class="line">    CacheNode(<span class="hljs-keyword">int</span> key, <span class="hljs-keyword">int</span> value):key(key), value(value), pre(<span class="hljs-literal">NULL</span>), next(<span class="hljs-literal">NULL</span>)&#123;&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Dummy-Node"><a href="#Dummy-Node" class="headerlink" title="Dummy Node"></a>Dummy Node</h4><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ListNode* result = <span class="hljs-keyword">new</span> ListNode(<span class="hljs-number">0</span>);</span><br><span class="line">result-&gt;next = head;</span><br></pre></td></tr></table></figure>
+
+<h4 id="两两翻转链表"><a href="#两两翻转链表" class="headerlink" title="两两翻转链表"></a>两两翻转链表</h4><p>主体：</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">while</span> (p != <span class="hljs-literal">NULL</span> &amp;&amp; p-&gt;next != <span class="hljs-literal">NULL</span>)&#123;</span><br><span class="line">    q = p-&gt;next;</span><br><span class="line">    p-&gt;next = q-&gt;next;</span><br><span class="line">    q-&gt;next = p; <span class="hljs-comment">//q-&gt;next = pre-&gt;next;</span></span><br><span class="line">    pre-&gt;next = q;</span><br><span class="line">    pre = p;</span><br><span class="line">    p = p-&gt;next;     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="k个一组翻转链表"><a href="#k个一组翻转链表" class="headerlink" title="k个一组翻转链表"></a>k个一组翻转链表</h4><p>主体：</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; loopNum; i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span> (j = <span class="hljs-number">0</span>; j &lt; k<span class="hljs-number">-1</span>; j++)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (p != <span class="hljs-literal">NULL</span> &amp;&amp; p-&gt;next != <span class="hljs-literal">NULL</span>)&#123;</span><br><span class="line">            q = p-&gt;next;</span><br><span class="line">            p-&gt;next = q-&gt;next;</span><br><span class="line">            q-&gt;next = pre-&gt;next;</span><br><span class="line">            pre-&gt;next = q;</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     pre = p;</span><br><span class="line">     p = p-&gt;next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>全部：</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> &#123;</span></span><br><span class="line"><span class="hljs-keyword">public</span>:</span><br><span class="line">    <span class="hljs-function">ListNode* <span class="hljs-title">reverseKGroup</span><span class="hljs-params">(ListNode* head, <span class="hljs-keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (head == <span class="hljs-literal">NULL</span> || k &lt;= <span class="hljs-number">0</span>)&#123;</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-literal">nullptr</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;</span><br><span class="line">        </span><br><span class="line">        ListNode* cur = head;</span><br><span class="line">        </span><br><span class="line">        <span class="hljs-keyword">while</span> (cur != <span class="hljs-literal">NULL</span>)&#123;</span><br><span class="line">            count++;</span><br><span class="line">            cur = cur-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="hljs-keyword">int</span> loopNum = count/k;</span><br><span class="line">        <span class="hljs-keyword">int</span> i, j;</span><br><span class="line">        ListNode* result = <span class="hljs-keyword">new</span> ListNode(<span class="hljs-number">0</span>);</span><br><span class="line">        result-&gt;next = head;</span><br><span class="line">        ListNode* pre = result;</span><br><span class="line">        ListNode* p = head;</span><br><span class="line">        ListNode* q = head;</span><br><span class="line">        <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; loopNum; i++)&#123;</span><br><span class="line">            <span class="hljs-keyword">for</span> (j = <span class="hljs-number">0</span>; j &lt; k<span class="hljs-number">-1</span>; j++)&#123;</span><br><span class="line">                <span class="hljs-keyword">if</span> (p != <span class="hljs-literal">NULL</span> &amp;&amp; p-&gt;next != <span class="hljs-literal">NULL</span>)&#123;</span><br><span class="line">                    q = p-&gt;next;</span><br><span class="line">                    p-&gt;next = q-&gt;next;</span><br><span class="line">                    q-&gt;next = pre-&gt;next;</span><br><span class="line">                    pre-&gt;next = q;</span><br><span class="line">                    &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            pre = p;</span><br><span class="line">            p = p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">      </span><br><span class="line">        <span class="hljs-keyword">return</span> result-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="快慢指针"><a href="#快慢指针" class="headerlink" title="快慢指针"></a>快慢指针</h4><p>删除倒数第k个节点</p>
+<h3 id="数组-array"><a href="#数组-array" class="headerlink" title="数组 array"></a>数组 array</h3><p>声明：</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//type arrayname[arraysize];</span></span><br><span class="line"><span class="hljs-keyword">int</span> <span class="hljs-built_in">array</span>[<span class="hljs-number">10</span>] = &#123;<span class="hljs-number">1000.0</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">3.4</span>, <span class="hljs-number">7.0</span>, <span class="hljs-number">50.0</span>&#125;;</span><br><span class="line"><span class="hljs-comment">//vector容器</span></span><br><span class="line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; a1;</span><br><span class="line"><span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">a2</span><span class="hljs-params">(<span class="hljs-number">2</span>, <span class="hljs-number">-1</span>)</span></span>;  <span class="hljs-comment">//2个int元素值均初始化为-1</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; <span class="hljs-title">a3</span><span class="hljs-params">(<span class="hljs-number">10</span>)</span></span>;  <span class="hljs-comment">//10个int元素值均初始化为0</span></span><br><span class="line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">string</span>&gt; svec1 =&#123;<span class="hljs-string">"the"</span>, <span class="hljs-string">"three"</span>, <span class="hljs-string">"kingdoms"</span>&#125;;</span><br><span class="line"><span class="hljs-function"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">string</span>&gt; <span class="hljs-title">svec2</span><span class="hljs-params">(<span class="hljs-number">10</span>)</span></span>;  <span class="hljs-comment">//10个string对象初始化为空</span></span><br><span class="line"></span><br><span class="line">v.push_back(temp);  <span class="hljs-comment">//向vector中添加元素</span></span><br><span class="line">v.empty();  <span class="hljs-comment">//检查是否为空</span></span><br><span class="line">v.capacity();  <span class="hljs-comment">//返回当前vector中最大可以存储数据的容量</span></span><br><span class="line">v.begin();v.end();  <span class="hljs-comment">//</span></span><br><span class="line">v.size();  <span class="hljs-comment">//返回v中元素的个数</span></span><br><span class="line">v[n];  <span class="hljs-comment">//获取v中第n个元素</span></span><br><span class="line"><span class="hljs-comment">//特别注意：对于一个空的vector,不能使用下标向其中添加元素。只能使用push_back. 只能对确知已存在的元素执行下标操作。</span></span><br><span class="line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;::iterator it;  <span class="hljs-comment">//it是能读写的vector中的元素</span></span><br><span class="line"><span class="hljs-built_in">string</span>::iterator it1;  <span class="hljs-comment">//it1是能读写的string对象中的字符</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//字符串</span></span><br><span class="line"><span class="hljs-keyword">char</span> <span class="hljs-built_in">string</span>[<span class="hljs-number">10</span>] = &#123;<span class="hljs-string">'h'</span>, <span class="hljs-string">'e'</span>, <span class="hljs-string">'l'</span>, <span class="hljs-string">'l'</span>, <span class="hljs-string">'o'</span>,<span class="hljs-string">'\0'</span>&#125;;</span><br><span class="line"><span class="hljs-keyword">char</span> string2[] = &#123;<span class="hljs-string">"hello"</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">strcpy</span>(s1,s2);  <span class="hljs-comment">//复制s2到s1</span></span><br><span class="line"><span class="hljs-built_in">strcat</span>(s1,s2);  <span class="hljs-comment">//连接s2到s1末尾</span></span><br><span class="line"><span class="hljs-built_in">strlen</span>(s1);  <span class="hljs-comment">//长度 </span></span><br><span class="line"><span class="hljs-built_in">strcmp</span>(s1,s2);  <span class="hljs-comment">//比较</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="双指针问题（Two-Sum）"><a href="#双指针问题（Two-Sum）" class="headerlink" title="双指针问题（Two Sum）"></a>双指针问题（Two Sum）</h4><ul>
+<li><p>two sum可以用hash做，也可以用相向双指针做</p>
+</li>
+<li><p>three-sum/two-sum-closest 用相向双指针</p>
+</li>
+<li><p>partition-array 思想和快排类似，典型题可以分为两部分和三部分</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">while</span> (i &lt;= j) &#123;</span><br><span class="line">    <span class="hljs-keyword">while</span> (i &lt;= j &amp;&amp; a[i] &lt; target) &#123;</span><br><span class="line">	    i++;</span><br><span class="line">   &#125;</span><br><span class="line">    <span class="hljs-keyword">while</span> (i &lt;= j &amp;&amp; a[j] &gt;= target) &#123;</span><br><span class="line">    j--;</span><br><span class="line">    &#125;</span><br><span class="line">   <span class="hljs-keyword">if</span> (i &lt;=j) &#123;</span><br><span class="line">        swap(a[i], a[j]);</span><br><span class="line">    i++;</span><br><span class="line">        j--;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-keyword">return</span> j+<span class="hljs-number">1</span>;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="SubArray"><a href="#SubArray" class="headerlink" title="SubArray"></a>SubArray</h4><ul>
+<li>best time to buy and sell stock/数飞机/Maximum Array<ul>
+<li>prefix sum问题</li>
+</ul>
+</li>
+</ul>
+<h4 id="Sorted-Array"><a href="#Sorted-Array" class="headerlink" title="Sorted Array"></a>Sorted Array</h4><ul>
+<li><p>merge-two-sorted-array</p>
+<ul>
+<li>一是可以开辟新空间的</li>
+<li>二是存在同一个数组中的，反向比较</li>
+</ul>
+</li>
+<li><p>两个有序数组中的中位数/第k个数</p>
+<ul>
+<li><p>一是O(m+n)的双指针寻找</p>
+</li>
+<li><p>二是O(logn)的二分法，两个数组的前k/2</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">比较nums1[k/<span class="hljs-number">2</span>]和nums2[k/<span class="hljs-number">2</span>]的大小</span><br><span class="line">    小的那个数组count+k/<span class="hljs-number">2</span>；</span><br><span class="line">    k = k - k/<span class="hljs-number">2</span>;</span><br><span class="line">直到取到第k个</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>数组内积（点乘）</li>
+<li>intersection-可以用哈希</li>
+</ul>
+<h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><h3 id="Queue-BFS"><a href="#Queue-BFS" class="headerlink" title="Queue == BFS"></a>Queue == BFS</h3><p>支持操作：O(1) push; O(1) pop; O(1) top</p>
+<h3 id="Stack-DFS"><a href="#Stack-DFS" class="headerlink" title="Stack == DFS"></a>Stack == DFS</h3><p>支持操作：O(1) push; O(1) pop; O(1) top</p>
+<p>数据结构实现题/非递归问题（DFS问题）/单调栈问题</p>
+<h4 id="例题：min-stack"><a href="#例题：min-stack" class="headerlink" title="例题：min stack"></a>例题：min stack</h4><p>构造一个存放最小值的栈，同步更新</p>
+<img src="/.rip//stack.png" style="zoom:25%;">
+
+<h4 id="例题：largest-rectangle-in-histogram"><a href="#例题：largest-rectangle-in-histogram" class="headerlink" title="例题：largest rectangle in histogram"></a>例题：largest rectangle in histogram</h4><h4 id="例题：两个栈做一个队列两个队列做一个栈"><a href="#例题：两个栈做一个队列两个队列做一个栈" class="headerlink" title="例题：两个栈做一个队列两个队列做一个栈"></a>例题：两个栈做一个队列两个队列做一个栈</h4><h3 id="HASH"><a href="#HASH" class="headerlink" title="HASH"></a>HASH</h3><p>实现原理，减小冲突： array+list形式；多个hash function；</p>
+<p>rehashing很复杂所以要避免！</p>
+<p>支持操作：O(1) insert; O(1) find; O(1) delete</p>
+<p>构造：</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 定义一个map对象</span></span><br><span class="line"><span class="hljs-built_in">map</span>&lt;<span class="hljs-keyword">int</span>, <span class="hljs-built_in">string</span>&gt; mapStudent; </span><br><span class="line"><span class="hljs-comment">// 第一种 用insert函數插入</span></span><br><span class="line">pairmapStudent.insert(pair&lt;<span class="hljs-keyword">int</span>, <span class="hljs-built_in">string</span>&gt;(<span class="hljs-number">000</span>, <span class="hljs-string">"student_zero"</span>)); </span><br><span class="line"><span class="hljs-comment">// 第二种 用insert函数插入value_type数据</span></span><br><span class="line">mapStudent.insert(<span class="hljs-built_in">map</span>&lt;<span class="hljs-keyword">int</span>, <span class="hljs-built_in">string</span>&gt;::value_type(<span class="hljs-number">001</span>, <span class="hljs-string">"student_one"</span>)); </span><br><span class="line"><span class="hljs-comment">// 第三种 用"array"方式插入</span></span><br><span class="line">mapStudent[<span class="hljs-number">123</span>] = <span class="hljs-string">"student_first"</span>;</span><br><span class="line">mapStudent[<span class="hljs-number">456</span>] = <span class="hljs-string">"student_second"</span>;</span><br></pre></td></tr></table></figure>
+
+<p>查找：</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-built_in">map</span>&lt;<span class="hljs-keyword">int</span>,CacheNode*&gt;::iterator it = mp.find(key);</span><br><span class="line"><span class="hljs-comment">// find 返回迭代器指向当前查找元素的位置否则返回map::end()位置</span></span><br><span class="line">iter = mapStudent.find(<span class="hljs-string">"123"</span>); </span><br><span class="line"><span class="hljs-keyword">if</span>(iter != mapStudent.end())       </span><br><span class="line">    <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"Find, the value is"</span>&lt;&lt;iter-&gt;second&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br><span class="line"><span class="hljs-keyword">else</span>   </span><br><span class="line">    <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"Do not Find"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+
+<p>删除：</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//迭代器刪除</span></span><br><span class="line">iter = mapStudent.find(<span class="hljs-string">"123"</span>);</span><br><span class="line">mapStudent.erase(iter); </span><br><span class="line"><span class="hljs-comment">//用关键字刪除</span></span><br><span class="line"><span class="hljs-keyword">int</span> n = mapStudent.erase(<span class="hljs-string">"123"</span>); </span><br><span class="line"><span class="hljs-comment">//如果刪除了會返回1，否則返回0 </span></span><br><span class="line"><span class="hljs-comment">//用迭代器范围刪除 : 把整个map清空</span></span><br><span class="line">mapStudent.erase(mapStudent.begin(), mapStudent.end());</span><br><span class="line"><span class="hljs-comment">//等同于mapStudent.clear()</span></span><br></pre></td></tr></table></figure>
+
+<p>其他基本函数：</p>
+<figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">C++ maps是一种关联式容器，包含“关键字/值”对</span><br><span class="line"></span><br><span class="line">begin()         返回指向<span class="hljs-built_in">map</span>头部的迭代器</span><br><span class="line">empty()         如果<span class="hljs-built_in">map</span>为空则返回<span class="hljs-literal">true</span></span><br><span class="line">end()           返回指向<span class="hljs-built_in">map</span>末尾的迭代器</span><br><span class="line">size()          返回<span class="hljs-built_in">map</span>中元素的个数</span><br><span class="line">count()         返回指定元素出现的次数</span><br><span class="line">    </span><br><span class="line">equal_range()   返回特殊条目的迭代器对</span><br><span class="line">get_allocator() 返回<span class="hljs-built_in">map</span>的配置器</span><br><span class="line">key_comp()      返回比较元素key的函数</span><br><span class="line">lower_bound()   返回键值&gt;=给定元素的第一个位置</span><br><span class="line">max_size()      返回可以容纳的最大元素个数</span><br><span class="line">rbegin()        返回一个指向<span class="hljs-built_in">map</span>尾部的逆向迭代器</span><br><span class="line">rend()          返回一个指向<span class="hljs-built_in">map</span>头部的逆向迭代器</span><br><span class="line">swap()           交换两个<span class="hljs-built_in">map</span></span><br><span class="line">upper_bound()    返回键值&gt;给定元素的第一个位置</span><br><span class="line">value_comp()     返回比较元素value的函数</span><br></pre></td></tr></table></figure>
+
+<h4 id="Hash-Table-Hash-Map-Hash-Set的区别是什么？"><a href="#Hash-Table-Hash-Map-Hash-Set的区别是什么？" class="headerlink" title="Hash Table/Hash Map/Hash Set的区别是什么？"></a>Hash Table/Hash Map/Hash Set的区别是什么？</h4><p>hash table支持多线程</p>
+<h4 id="多线程的producer-consumer模式"><a href="#多线程的producer-consumer模式" class="headerlink" title="多线程的producer/ consumer模式"></a>多线程的producer/ consumer模式</h4><h4 id="LRU-cache算法"><a href="#LRU-cache算法" class="headerlink" title="LRU-cache算法"></a>LRU-cache算法</h4><p>hashmap&lt;key, DoublyListNode&gt;;</p>
+<h3 id="Heap-Priority-Queue"><a href="#Heap-Priority-Queue" class="headerlink" title="Heap == Priority Queue"></a>Heap == Priority Queue</h3><p>支持操作：O(logn) add; O(logn) remove; O(1) min or max</p>
+<h4 id="例题：ugly-number"><a href="#例题：ugly-number" class="headerlink" title="例题：ugly-number"></a>例题：ugly-number</h4><figure class="highlight c++ hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">O(n)</span><br><span class="line">heap + <span class="hljs-function">hashmap <span class="hljs-title">O</span><span class="hljs-params">(nlogn)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-built_in">queue</span>&lt;<span class="hljs-keyword">long</span>&gt; Q</span>;</span><br><span class="line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">long</span>&gt; primes;</span><br><span class="line">primes = &#123;<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">7</span>&#125;;</span><br><span class="line">hashmap&lt;<span class="hljs-keyword">long</span>,Boolean&gt; mp;</span><br><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++)&#123;</span><br><span class="line">    Q.add(primes[i]);</span><br><span class="line">    mp.put(primes[i],<span class="hljs-literal">true</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-keyword">long</span> number = <span class="hljs-keyword">long</span>.value?;</span><br><span class="line"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">    number = Q.?();</span><br><span class="line">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">3</span>; j++)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (!mp.containskey(primes[j]*number)&#123;</span><br><span class="line">            Q.add(number*primes[j]);</span><br><span class="line">            mp.put(number*primes[j],<span class="hljs-literal">true</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-keyword">return</span> number;</span><br></pre></td></tr></table></figure>
+
+<h4 id="例题：top-k-largest-numbers"><a href="#例题：top-k-largest-numbers" class="headerlink" title="例题：top-k-largest-numbers"></a>例题：top-k-largest-numbers</h4><h4 id="例题：data-stream-median"><a href="#例题：data-stream-median" class="headerlink" title="例题：data-stream-median"></a>例题：data-stream-median</h4><h4 id="例题：merge-k-sorted-list-array"><a href="#例题：merge-k-sorted-list-array" class="headerlink" title="例题：merge-k-sorted-list/array"></a>例题：merge-k-sorted-list/array</h4>
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/笔记/">笔记</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">Like this article? Support the author with</h3>
+        <div class="buttons is-centered">
+            
+        </div>
+    </div>
+</div>
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/11/29/sql学习增删改查/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">sql学习增删改查</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/11/20/堆排序/">
+                <span class="level-item">堆排序</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comentarios</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'jsQbW7L09koJK6ws2GwsupIQ-gzGzoHsz',
+        app_key: '50daikb1zgV80YjFJNKcq1S6',
+        placeholder: 'Say something...'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                        <figure class="image is-128x128 has-mb-6">
+                            <img class="is-rounded" src="/images/avatar2.JPG" alt="carabbeam">
+                        </figure>
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        carabbeam
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        ZIMZALABIM
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>nanjing</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Entradas
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        30
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categorias
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        5
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Etiquetas
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        12
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/carabbeam" target="_blank">
+                SEGUIR</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/carabbeam">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Facebook" href="https://facebook.com">
+                
+                <i class="fab fa-facebook"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Twitter" href="https://twitter.com">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Dribbble" href="https://weibo.com/1832094835/profile?topnav=1&amp;wvr=6">
+                
+                <i class="fab fa-dribbble"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catálogo
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#普适思想">
+        <span class="has-mr-6">1</span>
+        <span>普适思想</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#例题：strstr">
+        <span class="has-mr-6">1.1</span>
+        <span>例题：strstr</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#递归recursion的思想">
+        <span class="has-mr-6">2</span>
+        <span>递归recursion的思想</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#递归的三个要素：">
+        <span class="has-mr-6">2.1</span>
+        <span>递归的三个要素：</span>
+        </a></li><li>
+        <a class="is-flex" href="#例题：subsets">
+        <span class="has-mr-6">2.2</span>
+        <span>例题：subsets</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#基础算法问题的-Time-Complexity">
+        <span class="has-mr-6">3</span>
+        <span>基础算法问题的 Time Complexity</span>
+        </a></li><li>
+        <a class="is-flex" href="#二分法binary-search的思想">
+        <span class="has-mr-6">4</span>
+        <span>二分法binary search的思想</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#recursion-or-Loop？">
+        <span class="has-mr-6">4.1</span>
+        <span>recursion or Loop？</span>
+        </a></li><li>
+        <a class="is-flex" href="#通用的二分法模板：">
+        <span class="has-mr-6">4.2</span>
+        <span>通用的二分法模板：</span>
+        </a></li><li>
+        <a class="is-flex" href="#例题：binary-search">
+        <span class="has-mr-6">4.3</span>
+        <span>例题：binary-search</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#二叉树">
+        <span class="has-mr-6">5</span>
+        <span>二叉树</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#前中后序遍历">
+        <span class="has-mr-6">5.1</span>
+        <span>前中后序遍历</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#前序">
+        <span class="has-mr-6">5.1.1</span>
+        <span>前序</span>
+        </a></li><li>
+        <a class="is-flex" href="#后序">
+        <span class="has-mr-6">5.1.2</span>
+        <span>后序</span>
+        </a></li><li>
+        <a class="is-flex" href="#中序">
+        <span class="has-mr-6">5.1.3</span>
+        <span>中序</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#层次遍历（BFS-Queue）">
+        <span class="has-mr-6">5.2</span>
+        <span>层次遍历（BFS-Queue）</span>
+        </a></li><li>
+        <a class="is-flex" href="#maxlength-minlength-of-B-tree-Traverse-or-Divide-Conquer">
+        <span class="has-mr-6">5.3</span>
+        <span>maxlength/minlength of B-tree : Traverse or Divide-Conquer</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#动态规划">
+        <span class="has-mr-6">6</span>
+        <span>动态规划</span>
+        </a></li><li>
+        <a class="is-flex" href="#链表-linked-list">
+        <span class="has-mr-6">7</span>
+        <span>链表 linked-list</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Dummy-Node">
+        <span class="has-mr-6">7.1</span>
+        <span>Dummy Node</span>
+        </a></li><li>
+        <a class="is-flex" href="#两两翻转链表">
+        <span class="has-mr-6">7.2</span>
+        <span>两两翻转链表</span>
+        </a></li><li>
+        <a class="is-flex" href="#k个一组翻转链表">
+        <span class="has-mr-6">7.3</span>
+        <span>k个一组翻转链表</span>
+        </a></li><li>
+        <a class="is-flex" href="#快慢指针">
+        <span class="has-mr-6">7.4</span>
+        <span>快慢指针</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#数组-array">
+        <span class="has-mr-6">8</span>
+        <span>数组 array</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#双指针问题（Two-Sum）">
+        <span class="has-mr-6">8.1</span>
+        <span>双指针问题（Two Sum）</span>
+        </a></li><li>
+        <a class="is-flex" href="#SubArray">
+        <span class="has-mr-6">8.2</span>
+        <span>SubArray</span>
+        </a></li><li>
+        <a class="is-flex" href="#Sorted-Array">
+        <span class="has-mr-6">8.3</span>
+        <span>Sorted Array</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#数据结构">
+        <span class="has-mr-6">9</span>
+        <span>数据结构</span>
+        </a></li><li>
+        <a class="is-flex" href="#Queue-BFS">
+        <span class="has-mr-6">10</span>
+        <span>Queue == BFS</span>
+        </a></li><li>
+        <a class="is-flex" href="#Stack-DFS">
+        <span class="has-mr-6">11</span>
+        <span>Stack == DFS</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#例题：min-stack">
+        <span class="has-mr-6">11.1</span>
+        <span>例题：min stack</span>
+        </a></li><li>
+        <a class="is-flex" href="#例题：largest-rectangle-in-histogram">
+        <span class="has-mr-6">11.2</span>
+        <span>例题：largest rectangle in histogram</span>
+        </a></li><li>
+        <a class="is-flex" href="#例题：两个栈做一个队列两个队列做一个栈">
+        <span class="has-mr-6">11.3</span>
+        <span>例题：两个栈做一个队列两个队列做一个栈</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#HASH">
+        <span class="has-mr-6">12</span>
+        <span>HASH</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Hash-Table-Hash-Map-Hash-Set的区别是什么？">
+        <span class="has-mr-6">12.1</span>
+        <span>Hash Table/Hash Map/Hash Set的区别是什么？</span>
+        </a></li><li>
+        <a class="is-flex" href="#多线程的producer-consumer模式">
+        <span class="has-mr-6">12.2</span>
+        <span>多线程的producer/ consumer模式</span>
+        </a></li><li>
+        <a class="is-flex" href="#LRU-cache算法">
+        <span class="has-mr-6">12.3</span>
+        <span>LRU-cache算法</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Heap-Priority-Queue">
+        <span class="has-mr-6">13</span>
+        <span>Heap == Priority Queue</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#例题：ugly-number">
+        <span class="has-mr-6">13.1</span>
+        <span>例题：ugly-number</span>
+        </a></li><li>
+        <a class="is-flex" href="#例题：top-k-largest-numbers">
+        <span class="has-mr-6">13.2</span>
+        <span>例题：top-k-largest-numbers</span>
+        </a></li><li>
+        <a class="is-flex" href="#例题：data-stream-median">
+        <span class="has-mr-6">13.3</span>
+        <span>例题：data-stream-median</span>
+        </a></li><li>
+        <a class="is-flex" href="#例题：merge-k-sorted-list-array">
+        <span class="has-mr-6">13.4</span>
+        <span>例题：merge-k-sorted-list/array</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="http://mrx.moe/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">救苦救难良观音</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">mrx.moe</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://yaxiang.bitcron.com/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">兴观群怨（？）湘姐姐</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">yaxiang.bitcron.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://baiyun.bitcron.com/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">神奇贝壳宝老师</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">baiyun.bitcron.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="http://kharybdism.bitcron.com/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">只想摸鱼慕咕咕</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">kharybdism.bitcron.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://septir.me/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">最可爱的暗水獭</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">septir.me</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categorias
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/专业/">
+            <span class="level-start">
+                <span class="level-item">专业</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">11</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/同人/">
+            <span class="level-start">
+                <span class="level-item">同人</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/生活/">
+            <span class="level-start">
+                <span class="level-item">生活</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/翻译/">
+            <span class="level-start">
+                <span class="level-item">翻译</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/随笔/">
+            <span class="level-start">
+                <span class="level-item">随笔</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Nube de etiquetas
+        </h3>
+        <a href="/tags/FGO/" style="font-size: 10px;">FGO</a> <a href="/tags/cp日记/" style="font-size: 10px;">cp日记</a> <a href="/tags/psycho-pass/" style="font-size: 10px;">psycho pass</a> <a href="/tags/刀剑乱舞-歌仙乙女/" style="font-size: 10px;">刀剑乱舞; 歌仙乙女</a> <a href="/tags/少女歌剧-恋光/" style="font-size: 10px;">少女歌剧; 恋光</a> <a href="/tags/日记/" style="font-size: 16.67px;">日记</a> <a href="/tags/杂谈/" style="font-size: 13.33px;">杂谈</a> <a href="/tags/笔记/" style="font-size: 20px;">笔记</a> <a href="/tags/考据/" style="font-size: 10px;">考据</a> <a href="/tags/英耽/" style="font-size: 10px;">英耽</a> <a href="/tags/茸米/" style="font-size: 10px;">茸米</a> <a href="/tags/赤红灯火妖魅行-黑由/" style="font-size: 10px;">赤红灯火妖魅行, 黑由</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recientes
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2022/04/11/hello-world/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-04-11T15:58:52.484Z">2022-04-11</time></div>
+                    <a href="/2022/04/11/hello-world/" class="has-link-black-ter is-size-6">Hello World</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/08/22/南方/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="南方">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-22T07:19:16.000Z">2020-08-22</time></div>
+                    <a href="/2020/08/22/南方/" class="has-link-black-ter is-size-6">南方</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/同人/">同人</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/08/01/Sybil-Travilla/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Sybil Seely">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-01T07:57:44.000Z">2020-08-01</time></div>
+                    <a href="/2020/08/01/Sybil-Travilla/" class="has-link-black-ter is-size-6">Sybil Seely</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/翻译/">翻译</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/07/06/cpp认证/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="CPP作者认证">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-07-06T14:40:59.000Z">2020-07-06</time></div>
+                    <a href="/2020/07/06/cpp认证/" class="has-link-black-ter is-size-6">CPP作者认证</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/同人/">同人</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/07/05/端午流水账/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="端午流水账！">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-07-05T05:56:10.000Z">2020-07-05</time></div>
+                    <a href="/2020/07/05/端午流水账/" class="has-link-black-ter is-size-6">端午流水账！</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/生活/">生活</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archivos
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">10</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2015/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2015</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Etiquetas
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/FGO/">
+                        <span class="tag">FGO</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/cp日记/">
+                        <span class="tag">cp日记</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/psycho-pass/">
+                        <span class="tag">psycho pass</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/刀剑乱舞-歌仙乙女/">
+                        <span class="tag">刀剑乱舞; 歌仙乙女</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/少女歌剧-恋光/">
+                        <span class="tag">少女歌剧; 恋光</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/日记/">
+                        <span class="tag">日记</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/杂谈/">
+                        <span class="tag">杂谈</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/笔记/">
+                        <span class="tag">笔记</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/考据/">
+                        <span class="tag">考据</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/英耽/">
+                        <span class="tag">英耽</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/茸米/">
+                        <span class="tag">茸米</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/赤红灯火妖魅行-黑由/">
+                        <span class="tag">赤红灯火妖魅行, 黑由</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recientes
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2022/04/11/hello-world/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Hello World">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2022-04-11T15:58:52.484Z">2022-04-11</time></div>
+                    <a href="/2022/04/11/hello-world/" class="has-link-black-ter is-size-6">Hello World</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/08/22/南方/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="南方">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-22T07:19:16.000Z">2020-08-22</time></div>
+                    <a href="/2020/08/22/南方/" class="has-link-black-ter is-size-6">南方</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/同人/">同人</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/08/01/Sybil-Travilla/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Sybil Seely">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-08-01T07:57:44.000Z">2020-08-01</time></div>
+                    <a href="/2020/08/01/Sybil-Travilla/" class="has-link-black-ter is-size-6">Sybil Seely</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/翻译/">翻译</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/07/06/cpp认证/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="CPP作者认证">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-07-06T14:40:59.000Z">2020-07-06</time></div>
+                    <a href="/2020/07/06/cpp认证/" class="has-link-black-ter is-size-6">CPP作者认证</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/同人/">同人</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/07/05/端午流水账/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="端午流水账！">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-07-05T05:56:10.000Z">2020-07-05</time></div>
+                    <a href="/2020/07/05/端午流水账/" class="has-link-black-ter is-size-6">端午流水账！</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/生活/">生活</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archivos
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2022/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2022</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">10</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">3</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2015/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2015</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Etiquetas
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/FGO/">
+                        <span class="tag">FGO</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/cp日记/">
+                        <span class="tag">cp日记</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/psycho-pass/">
+                        <span class="tag">psycho pass</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/刀剑乱舞-歌仙乙女/">
+                        <span class="tag">刀剑乱舞; 歌仙乙女</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/少女歌剧-恋光/">
+                        <span class="tag">少女歌剧; 恋光</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/日记/">
+                        <span class="tag">日记</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/杂谈/">
+                        <span class="tag">杂谈</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/笔记/">
+                        <span class="tag">笔记</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/考据/">
+                        <span class="tag">考据</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/英耽/">
+                        <span class="tag">英耽</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/茸米/">
+                        <span class="tag">茸米</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/赤红灯火妖魅行-黑由/">
+                        <span class="tag">赤红灯火妖魅行, 黑由</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/favicon.png" alt="算法课笔记1" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2022 carabbeam&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="GitHub" href="https://github.com/carabbeam">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Entradas',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categorias',
+                TAGS: 'Etiquetas',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
